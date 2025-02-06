@@ -1,9 +1,9 @@
 <script setup>
 import {
-    Add24Regular, 
-    Home24Regular,
-    Person24Regular
-} from '@vicons/fluent';
+    Plus, 
+    Home,
+    UserRegular
+} from '@vicons/fa';
 import { Link } from '@inertiajs/vue3';
 </script>
 <template>
@@ -21,7 +21,7 @@ import { Link } from '@inertiajs/vue3';
                     <div
                         class="h-[38px] w-[38px] bg-primary shadow-sm shadow-primary-50 group-hover:-translate-y-[4px] duration-100 rounded-xl flex items-center justify-center"
                     >
-                        <Add24Regular class="text-white h-[21px]" />
+                        <Plus class="text-white h-[21px]" />
                     </div>
 
                     <p class="font-medium text-xs">Website</p>
@@ -41,7 +41,7 @@ import { Link } from '@inertiajs/vue3';
                     <div
                         class="h-[34px] w-[38px] flex items-center justify-center"
                     >
-                        <Home24Regular class="text-primary h-[21px]" />
+                        <Home class="text-primary h-[21px]" />
                     </div>
 
                     <p class="font-medium text-xs">Dashboard</p>
@@ -61,7 +61,7 @@ import { Link } from '@inertiajs/vue3';
                     <div
                         class="h-[34px] w-[38px] flex items-center justify-center"
                     >
-                        <Person24Regular class="text-primary h-[21px]" />
+                        <UserRegular class="text-primary h-[21px]" />
                     </div>
 
                     <p class="font-medium text-xs">Account</p>
