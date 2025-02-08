@@ -32,7 +32,7 @@ const logoUrl = '/img/logo/logo_fixcreative.png';
             </div>
 
             <button class="bg-black text-primary w-fit h-fit px-4 py-2 rounded-full mt-10 hover:scale-105 transition-all">
-                <a href="`https://www.instagram.com/fixcreativephotography?igsh=MXYyYThiZ2FseDkzNw==`">
+                <a href="https://www.instagram.com/fixcreativephotography?igsh=MXYyYThiZ2FseDkzNw==" target="_blank">
                     Kontak Kami
                 </a>
             </button>
