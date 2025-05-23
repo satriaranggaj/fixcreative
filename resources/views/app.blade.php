@@ -22,9 +22,6 @@
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
         <link rel="icon" href="{{ asset('img/logo/logo_fixcreative.ico') }}" type="image/x-icon">
 
-        <!-- Fonts -->
-        <link href="public/font/Arial.woff" rel="stylesheet">
-
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Scripts -->
