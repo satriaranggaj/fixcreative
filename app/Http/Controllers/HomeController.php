@@ -13,12 +13,19 @@ class HomeController extends Controller
         $article = Article::where('slug', $slug)
             ->with('category')
             ->firstOrFail();
-    
+
         $articles = Article::with('category')->get();
 
         return Inertia::render('Home/ShowArticle', [
             'article' => $article,
-            'articles' => $articles
+            'articles' => $articles,
+            'meta' => [
+                'title' => $article->title,
+                'description' => $article->title, 
+                'keywords' => implode(', ', [$article->category->name, 'artikel', 'fix creative']),
+                'image' => asset('storage/' . $article->image),
+                'url' => url("/home/{$article->slug}"),
+            ],
         ]);
     }
 
