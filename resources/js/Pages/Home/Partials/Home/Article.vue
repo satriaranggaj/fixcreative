@@ -6,7 +6,6 @@ const articles = usePage().props.articles;
 
 const lastArticles = computed(() => {
     return articles
-    .filter((item) => item.id !== article.id)
     .slice()
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     .slice(0, 3);

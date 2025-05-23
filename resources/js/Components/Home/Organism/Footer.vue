@@ -22,9 +22,9 @@ import {
                         Jl. Wibawa Mukti II No.RT06/04, Jatisari, Kec. Jatiasih, Kota Bks, Jawa Barat 17426
                     </p>
                 </a>
-                <a href="tel:085888074561" target="_blank" class="phone">
+                <a href="tel:6285894934143" target="_blank" class="phone">
                     <p class="text-base flex mt-2">
-                        <TabletAlt class="mr-2 w-4" /> +62 858-8807-4561
+                        <TabletAlt class="mr-2 w-4" /> +62 858-9493-4143
                     </p>
                 </a>
                 <a href="mailto:fixcreativecoid@gmailcom" target="_blank" class="email">
