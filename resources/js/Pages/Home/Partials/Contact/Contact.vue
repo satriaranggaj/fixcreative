@@ -111,7 +111,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
 
 
 <template>
-    <section class="mt-20 px-4 py-4">
+    <section class="mt-20 py-4">
         <div class="text-center">
             <h1 class="text-2xl font-bold sm:text-4xl">HUBUNGI KAMI</h1>
             <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
@@ -210,6 +210,9 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
                         </div>
                     </n-form>
                 </div>
+            </div>
+            <div class="map mt-10">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.437900798684!2d106.94299827453266!3d-6.337282362004516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699387d9e11061%3A0x1de8f0398bdf8d1d!2sFix%20Creative%20Photo%20Studio%20Bekasi!5e0!3m2!1sid!2sid!4v1747973624933!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
