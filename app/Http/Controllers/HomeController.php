@@ -21,8 +21,8 @@ class HomeController extends Controller
             'articles' => $articles,
             'meta' => [
                 'title' => $article->title,
-                'description' => $article->title, 
-                'keywords' => implode(', ', [$article->category->name, 'artikel', 'fix creative']),
+                'description' => $article->content, 
+                'keywords' => implode(', ', [$article->category->name, 'artikel', 'berita', 'informasi']),
                 'image' => asset('storage/' . $article->image),
                 'url' => url("/home/{$article->slug}"),
             ],
@@ -34,14 +34,22 @@ class HomeController extends Controller
         $portfolio = Portfolio::where('slug', $slug)
             ->with('category')
             ->firstOrFail();
-    
+
         $portfolios = Portfolio::with('category')->get();
 
         return Inertia::render('Home/ShowPortfolio', [
             'portfolio' => $portfolio,
-            'portfolios' => $portfolios
+            'portfolios' => $portfolios,
+            'meta' => [
+                'title' => $portfolio->title,
+                'description' => $portfolio->content,
+                'keywords' => implode(', ', [$portfolio->category->name, 'portfolio', 'dokumentasi']),
+                'image' => asset('storage/' . (is_array(json_decode($portfolio->image, true)) ? json_decode($portfolio->image, true)[0] : 'default.jpg')),
+                'url' => url("/portfolio/{$portfolio->slug}"),
+            ],
         ]);
     }
+
 
     public function index()
     {
