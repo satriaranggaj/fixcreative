@@ -79,7 +79,7 @@ const submit = () => {
   const formattedEstimasi = new Intl.NumberFormat('id-ID').format(form.estimasiRaw)
 
   const waMessage = `Assalamualaikum
-  
+
 Helo Admin Fix Creative.
 Saya ${form.nama}, saya tertarik Menggunakan Jasa Fix Creative
 
@@ -89,7 +89,6 @@ Kebutuhan: ${form.title}
 Estimasi Tanggal: ${tanggal}
 Jam Acara: ${jamMulai} - ${jamSelesai}
 Estimasi Budget: Rp. ${formattedEstimasi}
-Rencana Tanggal: ${tanggal}
 Venue: ${form.alamat}
 Instagram: ${form.instagram}
 
