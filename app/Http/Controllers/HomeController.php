@@ -21,7 +21,7 @@ class HomeController extends Controller
             'articles' => $articles,
             'meta' => [
                 'title' => $article->title,
-                'description' => $article->content, 
+                'description' => substr(strip_tags($article->content), 0, 150),
                 'keywords' => implode(', ', [$article->category->name, 'artikel', 'berita', 'informasi']),
                 'image' => asset('storage/' . $article->image),
                 'url' => url("/home/{$article->slug}"),
@@ -42,7 +42,7 @@ class HomeController extends Controller
             'portfolios' => $portfolios,
             'meta' => [
                 'title' => $portfolio->title,
-                'description' => $portfolio->content,
+                'description' => substr(strip_tags($portfolio->content), 0, 150),
                 'keywords' => implode(', ', [$portfolio->category->name, 'portfolio', 'dokumentasi']),
                 'image' => asset('storage/' . (is_array(json_decode($portfolio->image, true)) ? json_decode($portfolio->image, true)[0] : 'default.jpg')),
                 'url' => url("/portfolio/{$portfolio->slug}"),

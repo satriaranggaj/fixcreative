@@ -43,9 +43,9 @@ const getFirstImage = (imageData) => {
 </script>
 
 <template>
-    <head>
+    <Head>
         <title>{{ portfolio.title }}</title>
-    </head>
+    </Head>
     <HomeLayout>
         <section class="px-4 py-4 pt-32 w-[90%] mx-auto">
             <div>
