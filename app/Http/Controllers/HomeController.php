@@ -5,34 +5,50 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Article;
 use App\Models\Portfolio;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function articleShow($slug)
+    public function articleShow(Request $request, $slug)
     {
         $article = Article::where('slug', $slug)
             ->with('category')
             ->firstOrFail();
-    
+
         $articles = Article::with('category')->get();
+
+        // Jika bukan request Inertia, render blade fallback untuk crawler
+        if (!$request->header('X-Inertia')) {
+            return view('app', [
+                'article' => $article->toArray(),
+                'articles' => $articles->toArray(),
+            ]);
+        }
 
         return Inertia::render('Home/ShowArticle', [
             'article' => $article,
-            'articles' => $articles
+            'articles' => $articles,
         ]);
     }
 
-    public function portfolioShow($slug)
+    public function portfolioShow(Request $request, $slug)
     {
         $portfolio = Portfolio::where('slug', $slug)
             ->with('category')
             ->firstOrFail();
-    
+
         $portfolios = Portfolio::with('category')->get();
+
+        if (!$request->header('X-Inertia')) {
+            return view('app', [
+                'portfolio' => $portfolio->toArray(),
+                'portfolios' => $portfolios->toArray(),
+            ]);
+        }
 
         return Inertia::render('Home/ShowPortfolio', [
             'portfolio' => $portfolio,
-            'portfolios' => $portfolios
+            'portfolios' => $portfolios,
         ]);
     }
 
