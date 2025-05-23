@@ -18,15 +18,6 @@ const formatDate = (dateString) => {
         day: 'numeric',
     });
 };
-const getFirstImage = (imageData) => {
-    if (!imageData) return 'default.jpg'
-    if (Array.isArray(imageData)) return imageData[0]
-    try {
-        return JSON.parse(imageData)[0] ?? 'default.jpg'
-    } catch {
-        return 'default.jpg'
-    }
-}
 </script>
 <template>
     <section class="mt-20 px-4 py-4">

@@ -60,34 +60,34 @@ import {
                     <p class="font-bold text-lg">DIVISI</p>
                     <ul class="ml-4" style="list-style-type:disc;">
                         <li>
-                            <Link class="text-base">
+                            <Link :href="route('division')" class="text-base">
                                 Fotografi – Wedding & Event Documentation
                             </Link>
                         </li>
                         <li>
-                            <Link class="text-base">
+                            <Link :href="route('division')" class="text-base">
                                 Agency – Branding & Digital Marketing
                             </Link>
                         </li>
                         <li>
-                            <Link class="text-base">
+                            <Link :href="route('division')" class="text-base">
                                 Studio – Multimedia & Content Production
                             </Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <Link>
+                    <Link :href="route('portfolio')">
                         <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
                             Portofolio
                         </p>
                     </Link>
-                    <Link>
+                    <Link :href="route('home')">
                         <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
                             Karir
                         </p>
                     </Link>
-                    <Link>
+                    <Link :href="route('contact')">
                         <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
                             Hubungi Kami
                         </p>

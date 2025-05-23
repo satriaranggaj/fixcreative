@@ -111,7 +111,7 @@ Saya menentukan Fix Creative dari ${form.pengetahuan}
 Boleh di info Pricelistnya, Terimakasih Fix Creative`
 
   const encoded = encodeURIComponent(waMessage)
-  const nomorWA = '6285888074561'
+  const nomorWA = '6285894934143'
   const waLink = `https://wa.me/${nomorWA}?text=${encoded}`
 
   window.open(waLink, '_blank')
@@ -127,38 +127,21 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
             <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
         </div>
         <div class="mt-8">
-            <div class="flex flex-wrap justify-center gap-3 lg:flex-nowrap px-4 sm:px-16">
-                <div class="w-full md:w-1/2 lg:mb-0 mb-10">
+            <div class="px-4 sm:px-16">
+                <div class="w-full lg:mb-0 mb-10 mx-auto">
                     <h2 class="text-2xl font-bold sm:text-3xl text-primary">Get In Touch</h2>
                     <br>
                     <p class="text-sm sm:text-base">
-                        Ingin tahu lebih jauh bagaimana kami dapat membantu anda? <br>
-                        Silahkan hubungi kami melalui kontak di bawah ini.
+                        Halo guys! Untuk lebih lanjut, silahkan Isi & Sumbit terlebih dahulu format Dibawah ini, kalian akan Otomatis Terhubung WhatsApp Kami. 
+                        <br>
+                        Yuk dapatkan Discount spesial dari kami.
                     </p>
                     <br>
-                    <h3 class="text-lg font-bold sm:text-xl">
+                    <h3 class="text-lg font-bold sm:text-xl mb-5">
                         Fix Creative Production House
                     </h3>
-                    <a href="https://maps.app.goo.gl/bbf76pkuc1d8zW1R8" target="_blank" class="address">
-                        <p class="flex font-bold text-base items-center">
-                            <LocationArrow class="mr-2 w-4" /> Fixcreative Production House
-                        </p>
-                        <p class="text-sm sm:text-base mt-1 ml-6">
-                            Jl. Wibawa Mukti II No.RT06/04, Jatisari, Kec. Jatiasih, Kota Bks, Jawa Barat 17426
-                        </p>
-                    </a>
-                    <a href="tel:085888074561" target="_blank" class="phone">
-                        <p class="text-sm sm:text-base flex mt-2">
-                            <TabletAlt class="mr-2 w-4" /> +62 858-8807-4561
-                        </p>
-                    </a>
-                    <a href="mailto:fixcreativecoid@gmailcom" target="_blank" class="email">
-                        <p class="text-sm sm:text-base flex mt-2">
-                            <Envelope class="mr-2 w-4" /> fixcreativecoid@gmail.com
-                        </p>
-                    </a>
                 </div>
-                <div class="w-full md:w-1/2">
+                <div class="w-full mx-auto">
                     <n-form ref="formRef" :model="form" :rules="rules" @submit.prevent="submit">
                         <n-form-item path="nama" label="Nama">
                             <n-input v-model:value="form.nama" placeholder="Nama" />
@@ -213,7 +196,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
                             <n-input v-model:value="form.harapan" type="textarea" placeholder="Harapan" />
                         </n-form-item>
 
-                        <div class="flex justify-end">
+                        <div class="flex justify-start">
                             <n-button attr-type="submit" type="primary" size="large" :disabled="form.processing">
                                 Submit
                             </n-button>
@@ -221,7 +204,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
                     </n-form>
                 </div>
             </div>
-            <div class="map mt-10">
+            <div class="map mt-16">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.437900798684!2d106.94299827453266!3d-6.337282362004516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699387d9e11061%3A0x1de8f0398bdf8d1d!2sFix%20Creative%20Photo%20Studio%20Bekasi!5e0!3m2!1sid!2sid!4v1747973624933!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
