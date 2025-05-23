@@ -25,14 +25,14 @@ const formatDate = (date) => {
 <template>
     <Head>
         <title>{{ article.title }}</title>
-        <meta name="description" :content="article.excerpt || article.title" />
+        <meta name="description" :content="article.title" />
         <meta property="og:title" :content="article.title" />
-        <meta property="og:description" :content="article.excerpt || article.title" />
+        <meta property="og:description" :content="article.title" />
         <meta property="og:image" :content="`${$page.props.app_url}/storage/${article.image}`" />
         <meta property="og:url" :content="`${$page.props.app_url}/home/${article.slug}`" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" :content="article.title" />
-        <meta name="twitter:description" :content="article.excerpt || article.title" />
+        <meta name="twitter:description" :content="article.title" />
         <meta name="twitter:image" :content="`${$page.props.app_url}/storage/${article.image}`" />
     </Head>
 
