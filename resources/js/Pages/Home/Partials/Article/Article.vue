@@ -1,15 +1,7 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
-import { computed } from 'vue';
 
 const articles = usePage().props.articles;
-
-const lastarticles = computed(() => {
-    return articles
-    .slice()
-    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    .slice(0, 3);
-});
 
 const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('id-ID', {
@@ -27,16 +19,16 @@ const formatDate = (dateString) => {
         </div>
         <div class="mt-8">
             <div class="flex flex-wrap justify-center gap-3 lg:flex-nowrap">
-                <div v-for="article in lastarticles" :key="article.id" class="sm:w-1/2 lg:w-1/3 w-full h-full">
+                <div v-for="article in articles" :key="article.id" class="sm:w-1/2 lg:w-1/3 w-full h-full">
                     <n-card hoverable>
-                        <img :src="article.image" class="w-full h-48 object-cover" />
+                        <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" />
                         <article class="p-4">
                             <h2 class="text-lg font-bold">{{ article.title }}</h2>
                             <div class="flex mb-2 text-gray-500">
                                 <p>{{ formatDate(article.created_at) }}</p> <p class="mx-2">-</p> <p>{{ article.category.name }}</p>
                             </div>
-                            <div class="text-base text-gray-600 mb-4 text-justify line-clamp-5" v-html="article.content"></div>
-                            <n-button class="text-black text-base" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
+                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="article.content"></div>
+                            <n-button class="text-black" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
                         </article>
                     </n-card>
                 </div>
