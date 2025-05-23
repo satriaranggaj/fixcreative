@@ -18,7 +18,7 @@ Aos.init({
 
 <template>
     <Head>
-        <title>About - Jasa Multimedia & Event Organizer</title>
+        <title>About</title>
     </Head>
 
     <HomeLayout>

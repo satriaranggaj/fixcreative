@@ -20,7 +20,7 @@ Aos.init({
 
 <template>
     <Head>
-        <title>Fix Creative - Jasa Multimedia & Event Organizer</title>
+        <title>Home</title>
     </Head>
 
     <HomeLayout>

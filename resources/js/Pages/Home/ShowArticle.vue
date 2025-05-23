@@ -23,6 +23,9 @@ const formatDate = (date) => {
 </script>
 
 <template>
+    <head>
+        <title>{{ article.title }}</title>
+    </head>
     <HomeLayout>
         <section class="px-4 py-4 pt-32 w-[90%] mx-auto">
             <div>
