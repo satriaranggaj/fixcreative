@@ -31,10 +31,20 @@ const time = ref(null)
 const timeSelesai = ref(null)
 
 const formatedKebutuhan = [
-  { label: 'Wedding Only', value: 'Wedding Only' },
   { label: 'Paket All In Wedding', value: 'Paket All In Wedding' },
-  { label: 'Prewedding Only', value: 'Prewedding Only' },
-]
+  { label: 'Multicam Live streaming', value: 'Multicam Live streaming' },
+  { label: 'Photo & Video Wedding', value: 'Photo & Video Wedding' },
+  { label: 'Photo & Video Prewedding', value: 'Photo & Video Prewedding' },
+  { label: 'Photo & Video pengajian / Siraman', value: 'Photo & Video pengajian / Siraman' },
+  { label: 'Photo & Video Wisuda', value: 'Photo & Video Wisuda' },
+  { label: 'Photobooth', value: 'Photobooth' },
+  { label: 'Video Spin 360', value: 'Video Spin 360' },
+  { label: 'Sewa Rigging', value: 'Sewa Rigging' },
+  { label: 'Sewa sound system', value: 'Sewa sound system' },
+  { label: 'Sewa Blower', value: 'Sewa Blower' },
+  { label: 'Sewa Genset', value: 'Sewa Genset' },
+  { label: 'Sewa AC', value: 'Sewa AC' },
+];
 
 const formatedPengetahuan = [
   { label: 'Teman / Keluarga / Saudara', value: 'Teman / Keluarga / Saudara' },
