@@ -1,7 +1,7 @@
 <script setup>
 import AppStore from '@/stores/ApplicationStore.js';
-import ApplicationLogo from '@/Components/Atoms/ApplicationLogo.vue';
-import AppMessageListener from '@/Components/Organism/AppMessageListener.vue';
+import ApplicationLogo from '@/Components/Admin/Atoms/ApplicationLogo.vue';
+import AppMessageListener from '@/Components/Admin/Organism/AppMessageListener.vue';
 import { Link } from '@inertiajs/vue3';
 </script>
 
@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <div>
                                 <Link href="/">
-                                    <ApplicationLogo class="h-20 w-20 fill-current text-gray-500" />
+                                    <ApplicationLogo class="h-20 fill-current text-gray-500" />
                                 </Link>
                             </div>
 

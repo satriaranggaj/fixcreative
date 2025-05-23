@@ -7,6 +7,7 @@ import { createApp, h } from 'vue';
 import naive from 'naive-ui';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({

@@ -13,9 +13,9 @@ const state = reactive({
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             borderRadius: '10px',
             primaryColor: appConfig.theme.primary['500'],
-            primaryColorHover: appConfig.theme.primary['700'],
-            primaryColorPressed: appConfig.theme.primary['700'],
-            primaryColorSuppl: appConfig.theme.primary['700'],
+            primaryColorHover: appConfig.theme.primary['600'],
+            primaryColorPressed: appConfig.theme.primary['600'],
+            primaryColorSuppl: appConfig.theme.primary['600'],
 
         },
     },

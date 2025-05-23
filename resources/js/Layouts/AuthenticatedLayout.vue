@@ -1,8 +1,8 @@
 <script setup>
 import AppStore from '@/stores/ApplicationStore.js';
-import Navbar from '@/Components/Organism/Navbar.vue';
-import Sidebar from '@/Components/Organism/Sidebar.vue';
-import AppMessageListener from '@/Components/Organism/AppMessageListener.vue';
+import Navbar from '@/Components/Admin/Organism/Navbar.vue';
+import Sidebar from '@/Components/Admin/Organism/Sidebar.vue';
+import AppMessageListener from '@/Components/Admin/Organism/AppMessageListener.vue';
 </script>
 
 <template>
