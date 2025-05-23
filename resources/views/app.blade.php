@@ -10,14 +10,14 @@
         <!-- Open Graph (Facebook & WhatsApp) -->
         <meta property="og:title" content="@yield('og_title', 'Fix Creative - Jasa Multimedia & Event Organizer')">
         <meta property="og:description" content="@yield('og_description', 'Fix Creative hadir untuk kebutuhan fotografi, website, dan event Anda.')">
-        <meta property="og:image" content="@yield('og_image', asset('images/logo_fixcreative.jpg'))">
+        <meta property="og:image" content="@yield('og_image', asset('img/logo/logo_fixcreative.jpg'))">
         <meta property="og:url" content="{{ url()->current() }}">
         
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="@yield('twitter_title', 'Fix Creative - Jasa Multimedia & Event Organizer')">
         <meta name="twitter:description" content="@yield('twitter_description', 'Fix Creative hadir untuk kebutuhan fotografi, website, dan event Anda.')">
-        <meta name="twitter:image" content="@yield('twitter_image', asset('images/logo_fixcreative.jpg'))">
+        <meta name="twitter:image" content="@yield('twitter_image', asset('img/logo/logo_fixcreative.jpg'))">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
         <link rel="icon" href="{{ asset('img/logo/logo_fixcreative.ico') }}" type="image/x-icon">

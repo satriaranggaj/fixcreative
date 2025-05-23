@@ -43,7 +43,19 @@ const getFirstImage = (imageData) => {
 </script>
 
 <template>
-    <Head :title="portfolio.title" />
+    <Head>
+        <title>{{ portfolio.title }}</title>
+        <meta name="description" :content="portfolio.excerpt || portfolio.title" />
+        <meta property="og:title" :content="portfolio.title" />
+        <meta property="og:description" :content="portfolio.excerpt || portfolio.title" />
+        <meta property="og:image" :content="`${$page.props.app_url}/storage/${getFirstImage(portfolio.image)}`" />
+        <meta property="og:url" :content="`${$page.props.app_url}/portfolio/${portfolio.slug}`" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" :content="portfolio.title" />
+        <meta name="twitter:description" :content="portfolio.excerpt || portfolio.title" />
+        <meta name="twitter:image" :content="`${$page.props.app_url}/storage/${getFirstImage(portfolio.image)}`" />
+    </Head>
+
 
     <HomeLayout>
         <section class="px-4 py-4 pt-32 w-[90%] mx-auto">
