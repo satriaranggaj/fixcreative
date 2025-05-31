@@ -66,12 +66,12 @@ import {
                         </li>
                         <li>
                             <Link :href="route('division')" class="text-base">
-                                Agency – Branding & Digital Marketing
+                                Agency – Multimedia Content Production, Branding & Digital Marketing
                             </Link>
                         </li>
                         <li>
                             <Link :href="route('division')" class="text-base">
-                                Studio – Multimedia & Content Production
+                                Studio – Brand Strategy, Visual Communication, Photography & Videography Services
                             </Link>
                         </li>
                     </ul>

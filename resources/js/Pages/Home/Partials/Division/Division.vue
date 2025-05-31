@@ -36,15 +36,15 @@ import { Link } from '@inertiajs/vue3';
                 </div>
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
-                        Agency – Branding & Digital Marketing
+                        Agency – Multimedia Content Production, Branding & Digital Marketing
                         <span class="h-1 w-24 mt-4 bg-primary block"></span>
                     </h2>
                     <p class="text-base text-justify">
-                        Divisi Agency Fix Creative membantu membangun dan memperkuat identitas brand melalui strategi kreatif dan berbasis data. Kami memastikan brand tampil menonjol dengan komunikasi visual yang menarik dan pesan yang tepat sasaran.
+                        Divisi Agency FixCreative menyediakan layanan produksi konten multimedia seperti video, multicam livestreaming, animasi, dan berbagai format audiovisual lainnya. Kami mengutamakan storytelling visual yang kuat dan sesuai dengan kebutuhan brand.
                         <br><br>
-                        Kami mengembangkan strategi branding dan pemasaran digital yang efektif untuk meningkatkan visibilitas dan keterlibatan audiens. Dengan analisis pasar yang mendalam, kami menciptakan solusi inovatif yang sesuai dengan tren industri.
+                        Dengan dukungan teknologi modern dan tim profesional, kami menciptakan konten yang estetis, relevan, dan berdampak tinggi untuk promosi, company profile, iklan digital, hingga media sosial.
                         <br><br>
-                        Setiap elemen branding yang kami rancang bertujuan untuk menciptakan koneksi emosional dengan target pelanggan. Kami fokus pada strategi jangka panjang yang tidak hanya menarik perhatian tetapi juga membangun reputasi brand yang solid.
+                        Kami percaya visual yang tepat dapat memperkuat citra brand. Karena itu, setiap konten dirancang berdasarkan strategi komunikasi yang matang agar pesan tersampaikan secara jelas dan efektif.
                     </p>
                     <Link class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
@@ -57,15 +57,15 @@ import { Link } from '@inertiajs/vue3';
                 </div>
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
-                        Studio – Multimedia & Content Production
+                        Studio – Brand Strategy, Visual Communication, Photography & Videography Services
                         <span class="h-1 w-24 mt-4 bg-primary block"></span>
                     </h2>
                     <p class="text-base text-justify">
-                        Divisi Studio FixCreative menghadirkan produksi konten multimedia berkualitas tinggi, termasuk video, animasi, dan konten audiovisual lainnya. Kami berfokus pada storytelling visual yang menarik dan sesuai dengan kebutuhan klien.
+                        Divisi Studio Fix Creative membantu membangun identitas brand melalui strategi kreatif dan komunikasi visual yang tepat sasaran. Kami menghadirkan desain yang menarik dan bermakna untuk membangun koneksi emosional dengan audiens.
                         <br><br>
-                        Dengan teknologi modern dan tim profesional, kami menciptakan konten yang estetis dan berdampak, baik untuk keperluan promosi, company profile, maupun media sosial. Setiap produksi kami disesuaikan agar efektif dan menarik bagi audiens.
+                        Kami juga menawarkan layanan fotografi dan videografi profesional, mulai dari sesi indoor maupun outdoor, termasuk foto keluarga, prewedding, hingga kebutuhan branding dan produk. Setiap hasil foto dikemas dengan pendekatan visual yang estetis dan relevan.
                         <br><br>
-                        Kami percaya bahwa visual yang kuat dapat meningkatkan daya tarik brand. Oleh karena itu, kami menggabungkan kreativitas dengan strategi komunikasi untuk memastikan setiap konten memiliki pesan yang jelas dan berkesan.
+                        Dengan tim berpengalaman dan analisis tren industri, kami menciptakan solusi visual yang strategis dan berdampak, mendukung kebutuhan promosi digital maupun branding jangka panjang.
                     </p>
                     <Link class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
