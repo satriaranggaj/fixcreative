@@ -12,14 +12,14 @@ const formatDate = (dateString) => {
 };
 </script>
 <template>
-    <section class="mt-20 py-4">
+    <section class="mt-20 px-4 py-4">
         <div class="text-center">
             <h1 class="text-2xl font-bold sm:text-4xl">ARTICLES</h1>
             <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
         </div>
         <div class="mt-8">
-            <div class="flex flex-wrap justify-center gap-2">
-                <div v-for="article in articles" :key="article.id" class="sm:w-1/2 lg:w-1/3 w-full h-full">
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div v-for="article in articles" :key="article.id" class="w-full h-full">
                     <n-card hoverable>
                         <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" />
                         <article class="p-4">
