@@ -12,7 +12,7 @@ const formatDate = (dateString) => {
 };
 </script>
 <template>
-    <section class="mt-20 px-2 py-4">
+    <section class="mt-20 py-4">
         <div class="text-center">
             <h1 class="text-2xl font-bold sm:text-4xl">ARTICLES</h1>
             <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
