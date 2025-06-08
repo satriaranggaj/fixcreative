@@ -19,7 +19,7 @@ const formatDate = (dateString) => {
         </div>
         <div class="mt-8">
             <div class="flex flex-wrap justify-center gap-3">
-                <div v-for="article in articles" :key="article.id" class="sm:w-1/2 lg:w-1/3 w-full h-full">
+                <div v-for="article in articles" :key="article.id" class="sm:w-1/2 lg:w-1/4 w-full h-full">
                     <n-card hoverable>
                         <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" />
                         <article class="p-4">
