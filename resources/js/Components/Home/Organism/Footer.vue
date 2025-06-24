@@ -78,17 +78,17 @@ import {
                 </div>
                 <div>
                     <Link :href="route('portfolio')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
+                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('portfolio')}">
                             Portofolio
                         </p>
                     </Link>
-                    <Link :href="route('home')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
+                    <Link :href="route('career') ">
+                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('career')}">
                             Karir
                         </p>
                     </Link>
                     <Link :href="route('contact')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all">
+                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('contact')}">
                             Hubungi Kami
                         </p>
                     </Link>
