@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('category');
+            $table->enum('category', ['full_time', 'part_time']);
             $table->string('title');
             $table->text('description');
+            $table->text('responsibilities');
+            $table->text('criteria');
             $table->timestamps();
         });
     }

@@ -62,12 +62,12 @@
                         Divisi
                     </p>
                 </Link>
-                <Link class="nav-link" :class="{active: route().current('portfolio')}" :href="route('portfolio') || route().current('portfolio.show')">
+                <Link class="nav-link" :class="{active: route().current('portfolio') || route().current('portfolio.show')}" :href="route('portfolio')">
                     <p class="text-black">
                         Portofolio
                     </p>
                 </Link>
-                <Link class="nav-link" :href="route('home')">
+                <Link class="nav-link" :href="route('career') " :class="{active: route().current('career')}">
                     <p class="text-black">
                         Karir
                     </p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Article;
+use App\Models\Career;
 use App\Models\Portfolio;
 
 class HomeController extends Controller
@@ -81,6 +82,13 @@ class HomeController extends Controller
     {
         return Inertia::render('Home/Article', [
             'articles' => Article::with('category')->get()
+        ]);
+    }
+
+    public function career()
+    {
+        return Inertia::render('Home/Career', [
+            'careers' => Career::all()
         ]);
     }
 

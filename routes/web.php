@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ArticleCategoryController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioCategoryController;
+use App\Http\Controllers\Admin\CareerController;
 
 
 Route::fallback(function () {
@@ -20,6 +21,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/division', [HomeController::class, 'division'])->name('division');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 Route::get('/article', [HomeController::class, 'article'])->name('article');
+Route::get('/career', [HomeController::class, 'career'])->name('career');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/home/{slug}', [HomeController::class, 'ArticleShow'])->name('article.show');
 Route::get('/portfolio/{slug}', [HomeController::class, 'PortfolioShow'])->name('portfolio.show');
@@ -56,6 +58,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/portfolio-categories/{portfolioCategory}/edit', [PortfolioCategoryController::class, 'edit'])->name('edit.portfolio-categories');
     Route::post('/portfolio-categories/{portfolioCategory}', [PortfolioCategoryController::class, 'update'])->name('update.portfolio-categories');
     Route::delete('/portfolio-categories/{portfolioCategory}', [PortfolioCategoryController::class, 'destroy'])->name('destroy.portfolio-categories');
+
+    Route::get('/careers', [CareerController::class, 'index'])->name('index.careers');
+    Route::get('/careers/create', [CareerController::class, 'create'])->name('create.careers');
+    Route::post('/careers', [CareerController::class, 'store'])->name('store.careers');
+    Route::get('/careers/{career}/edit', [CareerController::class, 'edit'])->name('edit.careers');
+    Route::post('/careers/{career}', [CareerController::class, 'update'])->name('update.careers');
+    Route::delete('/careers/{career}', [CareerController::class, 'destroy'])->name('destroy.careers');
 });
 
 Route::middleware('auth')->group(function () {

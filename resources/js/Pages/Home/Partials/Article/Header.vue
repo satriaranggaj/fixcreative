@@ -13,7 +13,7 @@ div {
     border-radius: 0 2vw 2vw 0;
     overflow: hidden;
     width: 100%;
-    min-height: 150px;
+    min-height: 75px;
     aspect-ratio: 6/1.5;
     object-fit: cover;
     object-position: top;
