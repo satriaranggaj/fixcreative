@@ -49,46 +49,46 @@ import {
             </div>
             <div class="flex flex-col gap-8 justify-between px-8 py-6 md:w-[65%] sm:flex-row sm:px-16 sm:py-12">
                 <div>
-                    <Link :href="route('home')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('home')}">Beranda</p>
+                    <Link :href="route('home')" :class="['font-bold text-lg hover:opacity-100 transition-all', route().current('home') ? 'opacity-100' : 'opacity-50']">
+                        <p>Beranda</p>
                     </Link>
-                    <Link :href="route('about')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('about')}">Tentang Kami</p>
+                    <Link :href="route('about')" :class="['font-bold text-lg hover:opacity-100 transition-all', route().current('about') ? 'opacity-100' : 'opacity-50']">
+                        <p>Tentang Kami</p>
                     </Link>
                 </div>
                 <div>
                     <p class="font-bold text-lg">DIVISI</p>
                     <ul class="ml-4" style="list-style-type:disc;">
                         <li>
-                            <Link :href="route('division')" class="text-base">
+                            <Link :href="route('division.photograph')" :class="['hover:opacity-100 transition-all', route().current('division.photograph') ? 'opacity-100' : 'opacity-50']">
                                 Fotografi – Wedding & Event Documentation
                             </Link>
                         </li>
                         <li>
-                            <Link :href="route('division')" class="text-base">
+                            <Link :href="route('division.agency')" :class="['hover:opacity-100 transition-all', route().current('division.agency') ? 'opacity-100' : 'opacity-50']">
                                 Agency – Multimedia Content Production, Branding & Digital Marketing
                             </Link>
                         </li>
                         <li>
-                            <Link :href="route('division')" class="text-base">
+                            <Link :href="route('division.studio')" :class="['hover:opacity-100 transition-all', route().current('division.studio') ? 'opacity-100' : 'opacity-50']">
                                 Studio – Brand Strategy, Visual Communication, Photography & Videography Services
                             </Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <Link :href="route('portfolio')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('portfolio')}">
+                    <Link :href="route('portfolio')" :class="['font-bold text-lg hover:opacity-100 transition-all', route().current('portfolio') || route().current('portfolio.show') ? 'opacity-100' : 'opacity-50']">
+                        <p>
                             Portofolio
                         </p>
                     </Link>
-                    <Link :href="route('career') ">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('career')}">
+                    <Link :href="route('career')" :class="['font-bold text-lg hover:opacity-100 transition-all', route().current('career') ? 'opacity-100' : 'opacity-50']">
+                        <p>
                             Karir
                         </p>
                     </Link>
-                    <Link :href="route('contact')">
-                        <p class="opacity-50 font-bold text-lg hover:opacity-100 transition-all" :class="{'opacity-100': route().current('contact')}">
+                    <Link :href="route('contact')" :class="['font-bold text-lg hover:opacity-100 transition-all', route().current('contact') ? 'opacity-100' : 'opacity-50']">
+                        <p>
                             Hubungi Kami
                         </p>
                     </Link>

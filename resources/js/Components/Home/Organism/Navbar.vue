@@ -57,7 +57,7 @@
                         Tentang Kami
                     </p>
                 </Link>
-                <Link class="nav-link" :class="{active: route().current('division')}" :href="route('division')">
+                <Link class="nav-link" :class="{active: route().current('division') || route().current('division.photograph') || route().current('division.agency') || route().current('division.studio')}" :href="route('division')">
                     <p class="text-black">
                         Divisi
                     </p>

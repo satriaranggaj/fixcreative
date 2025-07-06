@@ -27,7 +27,7 @@ import { Link } from '@inertiajs/vue3';
                         <br><br>
                         Kami memahami pentingnya kenangan yang abadi, sehingga selalu berusaha menciptakan visual yang tidak hanya estetis tetapi juga emosional. Kolaborasi dengan klien menjadi kunci utama kami untuk menghasilkan dokumentasi yang benar-benar personal dan berkesan.
                     </p>
-                    <Link class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.photograph')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>
@@ -48,7 +48,7 @@ import { Link } from '@inertiajs/vue3';
                         <br><br>
                         Kami percaya visual yang tepat dapat memperkuat citra brand. Karena itu, setiap konten dirancang berdasarkan strategi komunikasi yang matang agar pesan tersampaikan secara jelas dan efektif.
                     </p>
-                    <Link class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.agency')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>
@@ -69,7 +69,7 @@ import { Link } from '@inertiajs/vue3';
                         <br><br>
                         Dengan tim berpengalaman dan analisis tren industri, kami menciptakan solusi visual yang strategis dan berdampak, mendukung kebutuhan promosi digital maupun branding jangka panjang.
                     </p>
-                    <Link class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.studio')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>

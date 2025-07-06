@@ -23,8 +23,11 @@ Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio'
 Route::get('/article', [HomeController::class, 'article'])->name('article');
 Route::get('/career', [HomeController::class, 'career'])->name('career');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/home/{slug}', [HomeController::class, 'ArticleShow'])->name('article.show');
+Route::get('/article/{slug}', [HomeController::class, 'ArticleShow'])->name('article.show');
 Route::get('/portfolio/{slug}', [HomeController::class, 'PortfolioShow'])->name('portfolio.show');
+Route::get('/division/photograph', [HomeController::class, 'ShowPhotograph'])->name('division.photograph');
+Route::get('/division/agency', [HomeController::class, 'ShowAgency'])->name('division.agency');
+Route::get('/division/studio', [HomeController::class, 'ShowStudio'])->name('division.studio');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {

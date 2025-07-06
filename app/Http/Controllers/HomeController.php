@@ -9,6 +9,19 @@ use App\Models\Portfolio;
 
 class HomeController extends Controller
 {
+    public function ShowStudio()
+    {
+        return Inertia::render('Home/ShowStudio');
+    }
+    public function ShowAgency()
+    {
+        return Inertia::render('Home/ShowAgency');
+    }
+    public function ShowPhotograph()
+    {
+        return Inertia::render('Home/ShowPhotograph');
+    }
+
     public function articleShow($slug)
     {
         $article = Article::where('slug', $slug)
