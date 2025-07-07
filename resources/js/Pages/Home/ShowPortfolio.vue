@@ -77,6 +77,7 @@ const getFirstImage = (imageData) => {
                         <img
                             :src="`/storage/${getFirstImage(portfolio.image)}`"
                             class="w-full h-48 object-cover"
+                            alt="Portfolio Image"
                         />
                         <article class="p-4">
                             <h2 class="text-lg font-bold">{{ portfolio.title }}</h2>

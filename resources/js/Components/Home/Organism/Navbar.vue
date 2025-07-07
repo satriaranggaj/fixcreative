@@ -43,7 +43,7 @@
         <div class="h-full w-full px-5 flex justify-between items-center m-auto overflow-hidden sm:px-16 lg:px-32">
             <div class="logo min-w-fit h-[50px] mx-5">
                 <Link class="flex h-[100%] justify-center items-center" :href="route('home')">
-                    <img :src="UrlLogo" class="h-[100%]" alt="">
+                    <img :src="UrlLogo" class="h-[100%]" alt="logo">
                 </Link>
             </div>
             <div class="nav-links w-fit hidden justify-center lg:flex">

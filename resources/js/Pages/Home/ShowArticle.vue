@@ -32,7 +32,7 @@ const formatDate = (date) => {
                 <Link :href="route('article')" class="flex w-fit text-gray-700 font-bold hover:text-gray-500"><ArrowLeft class="mr-2 w-5 h-5 mb-4"/>Back To Home</Link>
             </div>
             <article class="bg-white p-6 rounded-lg shadow">
-                <img :src="'/storage/' + article.image" class="w-full h-[400px] object-cover mb-4 rounded-lg" />
+                <img :src="'/storage/' + article.image" class="w-full h-[400px] object-cover mb-4 rounded-lg" alt="Article Image" />
                 <h1 class="text-3xl font-bold">{{ article.title }}</h1>
                 <p class="text-gray-500 mb-4">{{ formatDate(article.created_at) }} - {{ article.category.name }}</p>
                 <div class="text-gray-700 leading-relaxed text-base" v-html="article.content"></div>
@@ -42,7 +42,7 @@ const formatDate = (date) => {
             <div class="flex flex-wrap justify-center gap-3 lg:flex-nowrap">
                 <div v-for="article in lastArticles" :key="article.id" class="w-full h-full">
                     <n-card hoverable>
-                        <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" />
+                        <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" alt="Article Image"/>
                         <article class="p-4">
                             <h2 class="text-lg font-bold">{{ article.title }}</h2>
                             <div class="flex mb-2 text-gray-500">

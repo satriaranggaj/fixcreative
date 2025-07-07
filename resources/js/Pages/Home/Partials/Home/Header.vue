@@ -24,10 +24,12 @@
             <img
             class="carousel-img blur-sm"
             src="img/bg/carousel.webp"
+            alt="carousel-1"
             >
             <img
             class="carousel-img blur-sm"
             src="img/bg/carousel-2.webp"
+            alt="carousel-2"
             >
         </n-carousel>
     </header>
