@@ -8,8 +8,7 @@
         </div>
         <div class="flex flex-col justify-center items-center py-10 px-2 mt-2 lg:flex-row">
             <div class="px-4 text-base py-8 lg:w-1/2 md:px-16 sm:px-8">
-                <h2 class="text-2xl font-semibold mb-12 sm:text-4xl lg:text-4xl lg:w-3/4">Fotografi – Wedding & Event Documentation
-</h2>
+                <h2 class="text-2xl font-semibold mb-12 sm:text-4xl lg:text-4xl lg:w-3/4">Fotografi – Wedding & Event Documentation</h2>
                 <div class="text-base text-justify">
                     <strong>Fix Creative Production House: Solusi Multimedia dan Event Profesional</strong>
                     <br><br>

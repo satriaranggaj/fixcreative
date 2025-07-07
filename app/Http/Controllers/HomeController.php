@@ -11,15 +11,36 @@ class HomeController extends Controller
 {
     public function ShowStudio()
     {
-        return Inertia::render('Home/ShowStudio');
+        return Inertia::render('Home/ShowStudio', [
+            'meta' => [
+                'title' => 'Studio – Brand Strategy, Visual Communication, Photography & Videography Services',
+                'description' => 'Divisi Studio dari Fix Creative Production House menyediakan layanan yang menggabungkan strategi brand, desain visual, serta fotografi dan videografi profesional untuk berbagai kebutuhan. Kami percaya bahwa tampilan visual yang kuat dan relevan mampu meningkatkan daya tarik brand dan memperkuat koneksi dengan audiens secara emosional.',
+                'keywords' => 'fotografer, videografer, studio fotografi, studio videografi, studio fotografi bekasi, studio videografi bekasi',
+                'image' => asset('img/division/studio.webp'),
+            ],
+        ]);
     }
     public function ShowAgency()
     {
-        return Inertia::render('Home/ShowAgency');
+        return Inertia::render('Home/ShowAgency', [
+            'meta' => [
+                'title' => 'Agency – Multimedia Content Production, Branding & Digital Marketing',
+                'description' => 'Divisi Agency dari Fix Creative Production House berfokus pada produksi konten multimedia dan pengembangan branding melalui strategi digital marketing yang terukur. Kami hadir untuk memenuhi kebutuhan komunikasi visual yang relevan dengan zaman digital, membantu bisnis tumbuh melalui konten yang beresonansi dengan audiensnya.',
+                'keywords' => 'agency, jasa multimedia, jasa personal branding, digital marketing, personal branding',
+                'image' => asset('img/division/agency.webp'),
+            ]
+        ]);
     }
     public function ShowPhotograph()
     {
-        return Inertia::render('Home/ShowPhotograph');
+        return Inertia::render('Home/ShowPhotograph', [
+            'meta' => [
+                'title' => 'Fotografi – Wedding & Event Documentation',
+                'description' => 'Divisi Fotografi dari Fix Creative Production House berfokus pada dokumentasi acara dan pernikahan, menangkap setiap momen dengan gaya visual storytelling yang kuat. Kami tidak hanya sekadar mengambil gambar, tetapi menghadirkan sebuah cerita melalui setiap foto dan video.',
+                'keywords' => 'fotografer, fotografi, fotografi wedding, fotografi event, fotografi wedding bekasi, fotografi event bekasi',
+                'image' => asset('img/division/photography.webp'),
+            ]
+        ]);
     }
 
     public function articleShow($slug)
