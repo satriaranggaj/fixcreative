@@ -95,13 +95,13 @@ const submit = () => {
                     <n-checkbox v-model:checked="form.remember" />
                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>
-                <Link
+                <!-- <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
                     class="underline text-sm text-gray-600 hover:text-gray-900"
                 >
                     Forgot your password?
-                </Link>
+                </Link> -->
             </div>
             <n-button
                 block
@@ -112,7 +112,7 @@ const submit = () => {
             >
                 Log in
             </n-button>
-            <p class="mt-5 text-center">
+            <!-- <p class="mt-5 text-center">
                 Don't have an account?
                 <Link
                     :href="route('register')"
@@ -120,7 +120,7 @@ const submit = () => {
                 >
                     Register
                 </Link>
-            </p>
+            </p> -->
         </n-form>
     </GuestLayout>
 </template>

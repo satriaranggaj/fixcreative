@@ -83,8 +83,7 @@ class HomeController extends Controller
                 'description' => substr(strip_tags($portfolio->content), 0, 150),
                 'keywords' => implode(', ', [$portfolio->category->name, 'portfolio', 'dokumentasi']),
                 'image' => asset('storage/' . (is_array(json_decode($portfolio->image, true)) ? json_decode($portfolio->image, true)[0] : 'default.jpg')),
-                'url' => url()->current(),
-            'url' => url("/portfolio/{$portfolio->slug}"),
+                'url' => url("/portfolio/{$portfolio->slug}"),
             ],
         ]);
     }
