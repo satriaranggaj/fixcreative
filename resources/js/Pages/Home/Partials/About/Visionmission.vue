@@ -17,7 +17,7 @@ import {
         </div>
         <div class="flex flex-col justify-center items-center py-10 px-2 mt-2 lg:flex-row">
             <div class="hidden image px-4 py-8 md:w-1/2 lg:block translate-x-28">
-                <img src="img/about/visionmission.webp" alt="about">
+                <img src="img/about/visionmission.webp" alt="about" loading="lazy">
             </div>
             <div class="px-4 text-base py-8 lg:w-1/2 md:px-16 sm:px-8">
                 <div class="text-base text-justify">

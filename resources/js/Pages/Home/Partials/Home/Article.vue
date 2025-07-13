@@ -29,7 +29,7 @@ const formatDate = (dateString) => {
             <div class="flex flex-wrap justify-center gap-3 lg:flex-nowrap">
                 <div v-for="article in lastArticles" :key="article.id" class="w-full h-full">
                     <n-card hoverable>
-                        <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" alt="Article Image" />
+                        <img :src="'/storage/' + article.image" class="w-full h-48 object-cover" alt="Article Image" loading="lazy" />
                         <article class="p-4">
                             <h2 class="text-lg font-bold line-clamp-1">{{ article.title }}</h2>
                             <div class="flex mb-2 text-gray-500">

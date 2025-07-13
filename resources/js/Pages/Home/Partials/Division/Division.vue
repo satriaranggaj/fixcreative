@@ -11,7 +11,7 @@ import { Link } from '@inertiajs/vue3';
         <div class="mt-16">
             <div class="my-8 md:px-8 lg:flex justify-center">
                 <div data-aos="fade-right" class="w-full p-8 lg:w-2/5">
-                    <img src="img/division/photography.webp" alt="photography" width="100%">
+                    <img src="img/division/photography.webp" alt="photography" width="100%" loading="lazy">
                 </div>
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
@@ -32,7 +32,7 @@ import { Link } from '@inertiajs/vue3';
             </div>
             <div class="my-8 md:px-8 lg:flex justify-center flex-row-reverse">
                 <div data-aos="fade-left" class="w-full p-8 lg:w-2/5">
-                    <img src="img/division/agency.webp" alt="agency" width="100%">
+                    <img src="img/division/agency.webp" alt="agency" width="100%" loading="lazy">
                 </div>
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
@@ -53,7 +53,7 @@ import { Link } from '@inertiajs/vue3';
             </div>
             <div class="my-8 md:px-8 lg:flex justify-center">
                 <div data-aos="fade-right" class="w-full p-8 lg:w-2/5">
-                    <img src="img/division/studio.webp" alt="studio" width="100%">
+                    <img src="img/division/studio.webp" alt="studio" width="100%" loading="lazy">
                 </div>
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">

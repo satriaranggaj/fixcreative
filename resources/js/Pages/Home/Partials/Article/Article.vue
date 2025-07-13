@@ -31,6 +31,7 @@ const formatDate = (dateString) => {
               :src="'/storage/' + article.image"
               class="w-full h-48 object-cover rounded-t"
               alt="Article Image"
+              loading="lazy"
             />
             <article class="p-4">
               <h2 class="text-lg font-bold text-primary">{{ article.title }}</h2>

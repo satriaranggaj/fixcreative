@@ -29,6 +29,7 @@
 
     <link rel="icon" href="{{ asset('img/logo/logo_fixcreative.ico') }}" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <!-- Scripts -->
     @routes

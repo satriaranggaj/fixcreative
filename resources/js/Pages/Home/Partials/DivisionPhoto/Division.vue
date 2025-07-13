@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="hidden image px-4 py-8 md:w-1/2 lg:block">
-                <img src="/img/division/photography.webp" alt="about">
+                <img src="/img/division/photography.webp" alt="about" loading="lazy">
             </div>
         </div>
     </section>
