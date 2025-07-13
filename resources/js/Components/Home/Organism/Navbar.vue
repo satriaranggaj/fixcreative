@@ -113,7 +113,7 @@
                             Portofolio
                         </p>
                     </Link>
-                    <Link class="nav-link" :href="route('home')">
+                    <Link class="nav-link" :href="route('career')" :class="{active: route().current('career')} ">
                         <p class="text-black">
                             Karir
                         </p>

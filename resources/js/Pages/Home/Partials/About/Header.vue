@@ -3,7 +3,7 @@
 <template>
     <header class="pt-5 mt-12 bg-primary-300 relative flex items-center">
         <div>
-            <img src="img/about/about-us.webp" alt="header-image" loading="lazy">
+            <img src="img/about/about-us.webp" alt="header-image" loading="lazy" width="100%">
         </div>
     </header>
 </template>
