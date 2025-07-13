@@ -8,13 +8,6 @@ const props = defineProps({
 });
 
 const formRef = ref(null);
-const editor = ref(null);
-
-const categoryOptions = [
-    { label: 'Full Time', value: 'full_time' },
-    { label: 'Part Time', value: 'part_time' },
-    { label: 'Full Time & Part Time', value: 'both' },
-];
 
 const form = useForm({
     title: props.career?.title ?? '',
@@ -36,6 +29,12 @@ const rules = {
     },
 };
 
+const categoryOptions = [
+    { label: 'Full Time', value: 'full_time' },
+    { label: 'Part Time', value: 'part_time' },
+    { label: 'Full Time & Part Time', value: 'both' },
+];
+
 const submit = () => {
     formRef.value?.validate((errors) => {
         if (errors) return;
@@ -48,8 +47,22 @@ const submit = () => {
     });
 };
 
-// CKEditor init
-onMounted(() => {
+// ✅ Load CKEditor hanya saat halaman ini dibuka
+const loadScript = (src) => {
+    return new Promise((resolve, reject) => {
+        if (window.CKEDITOR) return resolve();
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+};
+
+onMounted(async () => {
+    await loadScript('/libraries/ckeditor/ckeditor.js');
+
     const fields = ['description', 'responsibilities', 'criteria'];
 
     fields.forEach((field) => {
@@ -61,11 +74,11 @@ onMounted(() => {
                 notification: { duration: 0 },
             });
 
-            instance.on('change', function () {
+            instance.on('change', () => {
                 form[field] = instance.getData();
             });
 
-            instance.on('instanceReady', function () {
+            instance.on('instanceReady', () => {
                 if (form[field]) {
                     instance.setData(form[field]);
                 }

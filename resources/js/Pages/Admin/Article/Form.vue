@@ -75,31 +75,43 @@ const submit = () => {
 };
 
 
-onMounted(() => {
-    try {
+onMounted(async () => {
+    if (!window.CKEDITOR) {
+        await loadScript('/libraries/ckeditor/ckeditor.js');
+    }
+
+    if (window.CKEDITOR) {
         editor.value = CKEDITOR.replace('content', {
-            removePlugins: 'versionCheck', 
+            removePlugins: 'versionCheck',
             width: '100%',
             height: 300,
-            notification: {
-                duration: 0 
-            },
+            notification: { duration: 0 },
             on: {
-                change: function() {
+                change: function () {
                     form.content = editor.value.getData();
                     formRef.value?.validate();
                 },
-                instanceReady: function() {
+                instanceReady: function () {
                     if (form.content) {
                         editor.value.setData(form.content);
                     }
                 }
             }
-        }); 
-    } catch (error) {
-        console.error('CKEditor initialization failed:', error);
+        });
     }
 });
+
+const loadScript = (src) => {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+};
+
 
 onBeforeUnmount(() => {
     if (editor.value) {

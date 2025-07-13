@@ -13,20 +13,20 @@ const editor = ref(null);
 
 const form = useForm({
     image: props.portfolio?.image
-        ? props.portfolio.image.map((img) => ({
+        ? props.portfolio.image.map(img => ({
             url: '/storage/' + img,
             name: img.split('/').pop(),
             type: 'image/*',
             status: 'finished',
-        })) : [],
+        }))
+        : [],
     portfolio_category_id: props.portfolio?.portfolio_category_id ?? null,
     title: props.portfolio?.title ?? '',
     content: props.portfolio?.content ?? '',
 });
 
-
-const formatedportfolioCategories = computed(() => {
-    return props.portfolio_categories?.map((category) => ({
+const formattedPortfolioCategories = computed(() => {
+    return props.portfolio_categories?.map(category => ({
         label: category.name,
         value: category.id
     })) || [];
@@ -34,7 +34,7 @@ const formatedportfolioCategories = computed(() => {
 
 const rules = {
     image: {
-        trigger: ["input", "blur", "change"],
+        trigger: ['input', 'blur', 'change'],
         required: true,
         validator(rule, value) {
             if (!value || value.length === 0) {
@@ -51,17 +51,14 @@ const rules = {
         },
     },
     portfolio_category_id: {
-        trigger: ['change', 'blur', 'input'],
         required: true,
-        validator: (_, value) => (value ? true : new Error('Portfolio category is required')),
+        validator: (_, value) => value ? true : new Error('Portfolio category is required'),
     },
     title: {
-        trigger: ['change', 'blur', 'input'],
         required: true,
-        validator: (_, value) => (value ? true : new Error('Title is required')),
+        validator: (_, value) => value ? true : new Error('Title is required'),
     },
     content: {
-        trigger: ['change', 'blur', 'input'],
         required: true,
         validator: (_, value) => {
             const plainText = value ? value.replace(/<[^>]*>?/gm, '').trim() : '';
@@ -74,36 +71,48 @@ const submit = () => {
     formRef.value?.validate((errors) => {
         if (errors) return;
 
-        if (props.portfolio) {
-            form.post(route('update.portfolios', { portfolio: props.portfolio.id }));
-        } else {
-            form.post(route('store.portfolios')); 
-        }
+        const routeName = props.portfolio
+            ? route('update.portfolios', { portfolio: props.portfolio.id })
+            : route('store.portfolios');
+
+        form.post(routeName);
     });
 };
 
+// ✅ Lazy load CKEditor agar tidak menurunkan performa halaman
+const loadScript = (src) => {
+    return new Promise((resolve, reject) => {
+        if (window.CKEDITOR) return resolve();
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+};
 
-onMounted(() => {
+onMounted(async () => {
+    await loadScript('/libraries/ckeditor/ckeditor.js');
+
     try {
         editor.value = CKEDITOR.replace('content', {
-            removePlugins: 'versionCheck', 
+            removePlugins: 'versionCheck',
             width: '100%',
             height: 300,
-            notification: {
-                duration: 0 
-            },
-            on: {
-                change: function() {
-                    form.content = editor.value.getData();
-                    formRef.value?.validate();
-                },
-                instanceReady: function() {
-                    if (form.content) {
-                        editor.value.setData(form.content);
-                    }
-                }
+            notification: { duration: 0 },
+        });
+
+        editor.value.on('change', () => {
+            form.content = editor.value.getData();
+            formRef.value?.validate();
+        });
+
+        editor.value.on('instanceReady', () => {
+            if (form.content) {
+                editor.value.setData(form.content);
             }
-        }); 
+        });
     } catch (error) {
         console.error('CKEditor initialization failed:', error);
     }
@@ -145,7 +154,7 @@ onBeforeUnmount(() => {
                         </n-form-item>
 
                         <n-form-item path="portfolio_category_id" label="Portfolio Category">
-                            <n-select v-model:value="form.portfolio_category_id" :options="formatedportfolioCategories" />
+                            <n-select v-model:value="form.portfolio_category_id" :options="formattedPortfolioCategories" />
                         </n-form-item>
 
                         <n-form-item path="title" label="Title">

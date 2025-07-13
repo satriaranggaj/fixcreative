@@ -39,6 +39,5 @@
 <body class="font-sans antialiased">
     @inertia
 
-    <script src="{{ asset('libraries/ckeditor/ckeditor.js') }}"></script>
 </body>
 </html>
