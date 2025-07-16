@@ -25,6 +25,17 @@
     <meta name="twitter:description" content="{{ $meta['description'] ?? 'Fix Creative hadir untuk kebutuhan fotografi, website, dan event Anda.' }}">
     <meta name="twitter:image" content="{{ $meta['image'] ?? asset('img/logo/logo_fixcreative.jpg') }}">
 
+    <!-- Structured Data for Logo -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fix Creative",
+    "url": "https://fixcreative.co.id",
+    "logo": "https://fixcreative.co.id/img/logo/logo_fixcreative.jpg"
+    }
+    </script>
+
     <title inertia>{{ $meta['title'] ?? config('app.name', 'Laravel') }}</title>
 
     <link rel="icon" href="{{ asset('img/logo/logo_fixcreative.ico') }}" type="image/x-icon">
