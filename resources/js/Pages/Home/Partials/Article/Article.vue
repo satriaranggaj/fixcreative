@@ -20,11 +20,10 @@ const formatDate = (dateString) => {
     </div>
 
     <div class="mt-12">
-      <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         <div
-          v-for="article in articles"
+          v-for="article in sortedArticles"
           :key="article.id"
-          class="break-inside-avoid w-full"
         >
           <n-card hoverable class="w-full">
             <img
