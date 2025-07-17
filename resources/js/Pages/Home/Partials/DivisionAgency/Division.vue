@@ -22,6 +22,7 @@
                         <li>
                             <strong>Layanan Utama:</strong>
                             <ul style="list-style-type: disc;" class="ml-12">
+                                <li><strong>Web Development:</strong> Pengembangan website dan aplikasi web yang kreatif dan interaktif untuk memenuhi kebutuhan bisnis dan individu.</li>
                                 <li><strong>Strategi Digital Marketing:</strong> Perencanaan dan eksekusi kampanye pemasaran digital yang sesuai dengan target pasar.</li>
                                 <li><strong>Social Media Management:</strong> Pengelolaan akun media sosial secara profesional untuk meningkatkan engagement dan brand awareness.</li>
                                 <li><strong>Desain Grafis:</strong> Pembuatan desain visual yang menarik untuk kebutuhan promosi, branding, dan komunikasi bisnis.</li>

@@ -40,7 +40,7 @@ import { Link } from '@inertiajs/vue3';
                         <span class="h-1 w-24 mt-4 bg-primary block"></span>
                     </h2>
                     <p class="text-base text-justify">
-                        Divisi Agency FixCreative menyediakan layanan produksi konten multimedia seperti video, multicam livestreaming, animasi, dan berbagai format audiovisual lainnya. Kami mengutamakan storytelling visual yang kuat dan sesuai dengan kebutuhan brand.
+                        Divisi Agency FixCreative menyediakan layanan produksi konten multimedia seperti video, multicam livestreaming, animasi, dan berbagai format audiovisual lainnya serta Web Development. Kami mengutamakan storytelling visual yang kuat dan sesuai dengan kebutuhan brand.
                         <br><br>
                         Dengan dukungan teknologi modern dan tim profesional, kami menciptakan konten yang estetis, relevan, dan berdampak tinggi untuk promosi, company profile, iklan digital, hingga media sosial.
                         <br><br>
