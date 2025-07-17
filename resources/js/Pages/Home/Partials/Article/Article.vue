@@ -22,7 +22,7 @@ const formatDate = (dateString) => {
     <div class="mt-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         <div
-          v-for="article in sortedArticles"
+          v-for="article in articles"
           :key="article.id"
         >
           <n-card hoverable class="w-full">
@@ -33,7 +33,7 @@ const formatDate = (dateString) => {
               loading="lazy"
             />
             <article class="p-4">
-              <h2 class="text-lg font-bold text-primary line-clamp-1">{{ article.title }}</h2>
+              <h2 class="text-lg font-bold text-primary">{{ article.title }}</h2>
               <div class="flex mb-2 text-sm text-gray-500">
                 <p>{{ formatDate(article.created_at) }}</p>
                 <p class="mx-2">-</p>
@@ -58,7 +58,6 @@ const formatDate = (dateString) => {
 </template>
 
 <style scoped>
-/* Tambahkan agar teks ul/ol tetap rapi jika ada dalam artikel */
 ul {
   list-style-type: disc;
   padding-left: 1.25rem;
