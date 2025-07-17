@@ -81,7 +81,7 @@ const getFirstImage = (imageData) => {
                             loading="lazy"
                         />
                         <article class="p-4">
-                            <h2 class="text-lg font-bold">{{ portfolio.title }}</h2>
+                            <h2 class="text-lg font-bold line-clamp-1">{{ portfolio.title }}</h2>
                             <div class="flex mb-2 text-gray-500">
                                 <p>{{ formatDate(portfolio.created_at) }}</p> <p class="mx-2">-</p> <p>{{ portfolio.category.name }}</p>
                             </div>
