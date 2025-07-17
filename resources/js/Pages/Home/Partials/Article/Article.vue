@@ -25,11 +25,11 @@ const formatDate = (dateString) => {
     </div>
 
     <div class="mt-12">
-      <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="flex flex-wrap justify-center gap-3">
         <div
           v-for="article in sortedArticles"
           :key="article.id"
-          class="break-inside-avoid w-full"
+          class="w-full"
         >
           <n-card hoverable class="w-full">
             <img
@@ -39,7 +39,7 @@ const formatDate = (dateString) => {
               loading="lazy"
             />
             <article class="p-4">
-              <h2 class="text-lg font-bold text-primary">{{ article.title }}</h2>
+              <h2 class="text-lg font-bold text-primary line-clamp-1">{{ article.title }}</h2>
               <div class="flex mb-2 text-sm text-gray-500">
                 <p>{{ formatDate(article.created_at) }}</p>
                 <p class="mx-2">-</p>
