@@ -1,7 +1,12 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
 
 const articles = usePage().props.articles;
+
+const sortedArticles = computed(() => {
+  return [...articles].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+});
 
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString('id-ID', {
@@ -22,7 +27,7 @@ const formatDate = (dateString) => {
     <div class="mt-12">
       <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         <div
-          v-for="article in articles"
+          v-for="article in sortedArticles"
           :key="article.id"
           class="break-inside-avoid w-full"
         >
@@ -59,7 +64,6 @@ const formatDate = (dateString) => {
 </template>
 
 <style scoped>
-/* Tambahkan agar teks ul/ol tetap rapi jika ada dalam artikel */
 ul {
   list-style-type: disc;
   padding-left: 1.25rem;
