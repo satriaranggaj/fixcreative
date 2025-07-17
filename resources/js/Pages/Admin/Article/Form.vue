@@ -67,7 +67,7 @@ const submit = () => {
         if (errors) return;
 
         if (props.article) {
-            form.post(route('update.articles', { article: props.article.id }));
+            form.post(route('update.articles', { article: props.article.slug }));
         } else {
             form.post(route('store.articles')); 
         }

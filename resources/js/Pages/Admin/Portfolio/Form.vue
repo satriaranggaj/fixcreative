@@ -72,7 +72,7 @@ const submit = () => {
         if (errors) return;
 
         const routeName = props.portfolio
-            ? route('update.portfolios', { portfolio: props.portfolio.id })
+            ? route('update.portfolios', { portfolio: props.portfolio.slug })
             : route('store.portfolios');
 
         form.post(routeName);
