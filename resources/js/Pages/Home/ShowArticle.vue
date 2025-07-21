@@ -8,6 +8,29 @@ const article = usePage().props.article;
 
 const articles = usePage().props.articles;
 
+const getTextOnlyContent = (content) => {
+  const div = document.createElement('div');
+  div.innerHTML = content;
+
+  // Hapus semua <img>
+  div.querySelectorAll('img').forEach(img => img.remove());
+
+  // Hapus elemen <p> yang kosong termasuk jika hanya berisi karakter tak terlihat
+  div.querySelectorAll('p').forEach(p => {
+    // Bersihkan HTML dari &nbsp;, zero-width space, dan whitespace
+    const cleaned = p.innerHTML
+      .replace(/&nbsp;/gi, '')
+      .replace(/[\u200B-\u200D\uFEFF]/g, '') // zero-width chars
+      .replace(/\s+/g, '');
+
+    if (cleaned === '') {
+      p.remove();
+    }
+  });
+
+  return div.innerHTML;
+};
+
 const lastArticles = computed(() => {
     return articles
     .filter((item) => item.id !== article.id)
@@ -35,7 +58,8 @@ const formatDate = (date) => {
                 <img :src="'/storage/' + article.image" class="w-full h-[400px] object-cover mb-4 rounded-lg" alt="Article Image" loading="lazy" />
                 <h1 class="text-3xl font-bold">{{ article.title }}</h1>
                 <p class="text-gray-500 mb-4">{{ formatDate(article.created_at) }} - {{ article.category.name }}</p>
-                <div class="text-gray-700 leading-relaxed text-base" v-html="article.content"></div>
+                <div class="prose max-w-none text-gray-700 leading-relaxed text-base" v-html="article.content"></div>
+
             </article>
         </section>
         <section class="px-4 py-4 w-[90%] mx-auto">
@@ -48,7 +72,7 @@ const formatDate = (date) => {
                             <div class="flex mb-2 text-gray-500">
                                 <p>{{ formatDate(article.created_at) }}</p> <p class="mx-2">-</p> <p>{{ article.category.name }}</p>
                             </div>
-                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="article.content"></div>
+                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
                             <n-button class="text-black" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
                         </article>
                     </n-card>
@@ -57,3 +81,35 @@ const formatDate = (date) => {
         </section>
     </HomeLayout>
 </template>
+<style lang="scss" scoped>
+    .rich-text p {
+    margin-bottom: 1rem;
+    }
+
+    .rich-text h1, h2, h3 {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    }
+
+    .rich-text ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+    }
+
+    .rich-text ul li::marker {
+    color: black;
+    }
+
+    .rich-text ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+    }
+
+    .rich-text img {
+    max-width: 100%;
+    height: auto;
+    }
+    
+</style>

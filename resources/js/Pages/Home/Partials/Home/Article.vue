@@ -4,6 +4,29 @@ import { computed } from 'vue';
 
 const articles = usePage().props.articles;
 
+const getTextOnlyContent = (content) => {
+  const div = document.createElement('div');
+  div.innerHTML = content;
+
+  // Hapus semua <img>
+  div.querySelectorAll('img').forEach(img => img.remove());
+
+  // Hapus elemen <p> yang kosong termasuk jika hanya berisi karakter tak terlihat
+  div.querySelectorAll('p').forEach(p => {
+    // Bersihkan HTML dari &nbsp;, zero-width space, dan whitespace
+    const cleaned = p.innerHTML
+      .replace(/&nbsp;/gi, '')
+      .replace(/[\u200B-\u200D\uFEFF]/g, '') // zero-width chars
+      .replace(/\s+/g, '');
+
+    if (cleaned === '') {
+      p.remove();
+    }
+  });
+
+  return div.innerHTML;
+};  
+
 const lastArticles = computed(() => {
     return articles
     .slice()
@@ -35,7 +58,7 @@ const formatDate = (dateString) => {
                             <div class="flex mb-2 text-gray-500">
                                 <p>{{ formatDate(article.created_at) }}</p> <p class="mx-2">-</p> <p>{{ article.category.name }}</p>
                             </div>
-                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="article.content"></div>
+                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
                             <n-button class="text-black" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
                         </article>
                     </n-card>
