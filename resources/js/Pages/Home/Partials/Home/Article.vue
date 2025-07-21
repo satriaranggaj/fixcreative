@@ -45,7 +45,7 @@ const formatDate = (dateString) => {
 <template>
     <section class="mt-8 px-4 py-4">
         <div class="text-center mb-8">
-            <h1 class="text-xl font-bold sm:text-2xl">BERITA & ARTIKEL</h1>
+            <h1 class="text-xl font-bold sm:text-2xl text-primary-500">BERITA & ARTIKEL</h1>
             <h2 class="text-2xl font-black text-primary sm:text-4xl">UPDATE & INFO TERBARU</h2>
         </div>
         <div>
@@ -59,7 +59,7 @@ const formatDate = (dateString) => {
                                 <p>{{ formatDate(article.created_at) }}</p> <p class="mx-2">-</p> <p>{{ article.category.name }}</p>
                             </div>
                             <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
-                            <n-button class="text-black" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
+                            <n-button class="text-white" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
                         </article>
                     </n-card>
                 </div>

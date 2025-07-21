@@ -44,7 +44,7 @@ const toggleAccordion = (index) => {
 <template>
     <section class="mt-8 px-4 py-4">
         <div class="text-center mb-8">
-            <h1 class="text-xl font-bold sm:text-2xl">FAQ - Fix Creative</h1>
+            <h1 class="text-xl font-bold sm:text-2xl text-primary-500">FAQ - Fix Creative</h1>
             <h2 class="text-2xl font-black text-primary sm:text-4xl">INFORMASI SEPUTAR LAYANAN</h2>
         </div>
         <div class="px-4 py-4 w-[90%] mx-auto">
@@ -52,14 +52,14 @@ const toggleAccordion = (index) => {
                 <div v-for="(item, index) in items" :key="index" class="rounded-lg overflow-hidden">
                     <div class="accordion rounded-xl overflow-hidden transition-all shadow-md hover:shadow-lg">
                         <div 
-                            class="accordion-header bg-primary py-4 px-6 cursor-pointer flex justify-between" 
+                            class="accordion-header bg-primary text-white py-4 px-6 cursor-pointer flex justify-between" 
                             @click="toggleAccordion(index)"
                         >
                             <span class="font-semibold sm:text-lg">{{ item.title }}</span>
                             <AngleDown class="w-5 transition-all duration-300" :class="{ 'rotate-180': activeAccordionIndex === index }"/>
                         </div>
                         <div 
-                            class="accordion-body transition-all duration-300 overflow-hidden bg-primary-300" 
+                            class="accordion-body transition-all duration-300 overflow-hidden bg-primary-700 text-white" 
                             :class="{ 'max-h-96': activeAccordionIndex === index, 'max-h-0': activeAccordionIndex !== index }"
                         >
                             <div class="p-4" v-html="item.content"></div>

@@ -13,7 +13,7 @@ import {
     <section>
         <div class="text-center mt-8">
             <h1 class="text-2xl font-bold sm:text-4xl">VISI & MISI</h1>
-            <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
+            <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
         </div>
         <div class="flex flex-col justify-center items-center py-10 px-2 mt-2 lg:flex-row">
             <div class="hidden image px-4 py-8 md:w-1/2 lg:block translate-x-28">
@@ -104,6 +104,6 @@ import {
     object-position: center;
     width: 80%;
     aspect-ratio: 5/6;
-    box-shadow: -100px 100px 0px #fcc600;
+    box-shadow: -100px 100px 0px #5C5C5C;
 }
 </style>

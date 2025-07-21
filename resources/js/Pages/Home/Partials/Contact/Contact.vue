@@ -153,7 +153,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
     <section class="mt-20 py-4">
         <div class="text-center">
             <h1 class="text-2xl font-bold sm:text-4xl">HUBUNGI KAMI</h1>
-            <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
+            <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
         </div>
         <div class="mt-8">
             <div class="px-4 sm:px-16">

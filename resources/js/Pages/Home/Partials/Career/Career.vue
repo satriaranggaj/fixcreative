@@ -27,7 +27,7 @@ const generateMailtoLink = (title, category) => {
   <section class="mt-20 px-4 py-4">
     <div class="text-center">
       <h1 class="text-2xl font-bold sm:text-4xl">KARIR</h1>
-      <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
+      <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
       <div class="desc mt-8 text-xl">
         <p>Kami selalu mencari orang-orang yang memiliki minat dan kemampuan untuk bekerja sama dengan kami.</p>
         <br />
@@ -56,7 +56,7 @@ const generateMailtoLink = (title, category) => {
 
                         <a
                         :href="generateMailtoLink(career.title, career.category)"
-                        class="inline-block mt-4 px-4 py-2 text-white bg-primary hover:bg-primary/80 rounded"
+                        class="inline-block mt-4 px-4 py-2 text-white bg-primary-100 hover:bg-primary-100/80 rounded"
                         >
                         Lamar via Email
                         </a>

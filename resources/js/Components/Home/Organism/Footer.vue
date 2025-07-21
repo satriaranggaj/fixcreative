@@ -11,7 +11,7 @@ import {
          } from '@vicons/fa';
 </script>
 <template>
-    <footer class="bg-primary-300 mt-16">
+    <footer class="bg-primary-300 text-white mt-16">
         <div class="flex flex-col justify-between md:flex-row">
             <div class="px-8 py-6 bg-primary md:w-[35%] sm:px-16 sm:py-12">
                 <a href="https://maps.app.goo.gl/bbf76pkuc1d8zW1R8" target="_blank" class="address">
@@ -95,7 +95,7 @@ import {
                 </div>
             </div>
         </div>
-        <div class="bg-black text-white text-center text-xs py-2">
+        <div class="bg-primary-800 text-white text-center text-xs py-2">
             <p>Copyright &copy; 2025 Fix Creative. All rights reserved.</p>
         </div>
     </footer>

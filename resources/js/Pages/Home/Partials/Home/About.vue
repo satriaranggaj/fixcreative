@@ -1,12 +1,12 @@
 <script setup>
 </script>
 <template>
-    <section class="flex flex-col bg-primary py-10 px-2 md:flex-row">
+    <section class="flex flex-col bg-primary-200 py-10 px-2 md:flex-row">
         <div class="px-4 py-8 md:w-1/2">
-            <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl md:w-3/4 md:ml-auto">FIX CREATIVE PRODUCTION HOUSE</h1>
+            <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl md:w-3/4 md:ml-auto text-white">FIX CREATIVE PRODUCTION HOUSE</h1>
         </div>
         <div class="px-4 py-8 md:w-1/2">
-            <p class="text-base text-justify">
+            <p class="text-base text-justify text-white">
                 Fix Creative Production House adalah penyedia layanan multimedia dan pengelola event profesional yang menghadirkan solusi kreatif untuk berbagai kebutuhan bisnis dan individu.
                 <br><br>
                 Dengan tiga divisi utama—Fotografi, Agency, dan Studio, kami berkomitmen untuk memberikan hasil berkualitas tinggi yang mengesankan, efektif, dan sesuai dengan identitas brand klien.
@@ -23,5 +23,5 @@
             </p>
         </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fcc600" fill-opacity="1" d="M0,64L288,160L576,64L864,288L1152,32L1440,256L1440,0L1152,0L864,0L576,0L288,0L0,0Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#999999" fill-opacity="1" d="M0,64L288,160L576,64L864,288L1152,32L1440,256L1440,0L1152,0L864,0L576,0L288,0L0,0Z"></path></svg>
 </template>

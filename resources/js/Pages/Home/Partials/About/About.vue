@@ -4,7 +4,7 @@
     <section>
         <div class="text-center mt-20">
             <h1 class="text-2xl font-bold sm:text-4xl">TENTANG KAMI</h1>
-            <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
+            <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
         </div>
         <div class="flex flex-col justify-center items-center py-10 px-2 mt-2 lg:flex-row">
             <div class="px-4 text-base py-8 lg:w-1/2 md:px-16 sm:px-8">
@@ -72,6 +72,6 @@
     object-position: center;
     width: 80%;
     aspect-ratio: 5/6;
-    box-shadow: 100px 100px 0px #fcc600;
+    box-shadow: 100px 100px 0px #5C5C5C;
 }
 </style>

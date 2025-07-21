@@ -5,7 +5,7 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <section class="mt-8 px-4 py-4">
         <div class="text-center">
-            <h1 class="text-xl font-bold sm:text-2xl">
+            <h1 class="text-xl font-bold sm:text-2xl text-primary-500">
                 DIVISI
             </h1>
             <h2 class="text-2xl font-black text-primary sm:text-4xl">KEAHLIAN KAMI</h2>
@@ -18,7 +18,7 @@ import { Link } from '@inertiajs/vue3';
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
                         Fotografi – Wedding & Event Documentation
-                        <span class="h-1 w-24 mt-4 bg-primary block"></span>
+                        <span class="h-1 w-24 mt-4 bg-primary-100 block"></span>
                     </h2>
                     <p class="text-base text-justify">
                         Divisi Fotografi Fix Creative berfokus pada dokumentasi pernikahan dan acara, mengabadikan setiap momen dengan sentuhan profesional dan storytelling yang kuat. Kami memastikan setiap foto dan video menangkap emosi serta suasana dengan hasil berkualitas tinggi.
@@ -27,7 +27,7 @@ import { Link } from '@inertiajs/vue3';
                         <br><br>
                         Kami memahami pentingnya kenangan yang abadi, sehingga selalu berusaha menciptakan visual yang tidak hanya estetis tetapi juga emosional. Kolaborasi dengan klien menjadi kunci utama kami untuk menghasilkan dokumentasi yang benar-benar personal dan berkesan.
                     </p>
-                    <Link :href="route('division.photograph')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.photograph')" class="text-base flex items-center w-fit px-8 py-1 bg-primary-100 rounded-full mt-8 text-primary hover:bg-primary hover:text-white transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>
@@ -39,16 +39,16 @@ import { Link } from '@inertiajs/vue3';
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
                         Agency – Multimedia Content Production, Branding & Digital Marketing
-                        <span class="h-1 w-24 mt-4 bg-primary block"></span>
+                        <span class="h-1 w-24 mt-4 bg-primary-100 block"></span>
                     </h2>
                     <p class="text-base text-justify">
-                        Divisi Agency FixCreative menyediakan layanan produksi konten multimedia seperti video, multicam livestreaming, animasi, dan berbagai format audiovisual lainnya. Kami mengutamakan storytelling visual yang kuat dan sesuai dengan kebutuhan brand.
+                        Divisi Agency FixCreative menyediakan layanan produksi konten multimedia seperti video, multicam livestreaming, animasi, dan berbagai format audiovisual lainnya serta Web Development. Kami mengutamakan storytelling visual yang kuat dan sesuai dengan kebutuhan brand.
                         <br><br>
-                        Dengan dukungan teknologi modern dan tim profesional, kami menciptakan konten yang estetis, relevan, dan berdampak tinggi untuk promosi, company profile, news media, iklan digital, hingga media sosial.
+                        Dengan dukungan teknologi modern dan tim profesional, kami menciptakan konten yang estetis, relevan, dan berdampak tinggi untuk promosi, company profile, iklan digital, hingga media sosial.
                         <br><br>
                         Kami percaya visual yang tepat dapat memperkuat citra brand. Karena itu, setiap konten dirancang berdasarkan strategi komunikasi yang matang agar pesan tersampaikan secara jelas dan efektif.
                     </p>
-                    <Link :href="route('division.agency')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.agency')" class="text-base flex items-center w-fit px-8 py-1 bg-primary-100 rounded-full mt-8 text-primary hover:bg-primary hover:text-white transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>
@@ -60,7 +60,7 @@ import { Link } from '@inertiajs/vue3';
                 <div class="w-full p-4 lg:w-1/2">
                     <h2 class="text-2xl font-bold mb-8 md:text-3xl">
                         Studio – Brand Strategy, Visual Communication, Photography & Videography Services
-                        <span class="h-1 w-24 mt-4 bg-primary block"></span>
+                        <span class="h-1 w-24 mt-4 bg-primary-100 block"></span>
                     </h2>
                     <p class="text-base text-justify">
                         Divisi Studio Fix Creative membantu membangun identitas brand melalui strategi kreatif dan komunikasi visual yang tepat sasaran. Kami menghadirkan desain yang menarik dan bermakna untuk membangun koneksi emosional dengan audiens.
@@ -69,7 +69,7 @@ import { Link } from '@inertiajs/vue3';
                         <br><br>
                         Dengan tim berpengalaman dan analisis tren industri, kami menciptakan solusi visual yang strategis dan berdampak, mendukung kebutuhan promosi digital maupun branding jangka panjang.
                     </p>
-                    <Link :href="route('division.studio')" class="text-base flex items-center w-fit px-8 py-1 bg-primary rounded-full mt-8 text-black hover:bg-black hover:text-primary transition-all duration-300" round>
+                    <Link :href="route('division.studio')" class="text-base flex items-center w-fit px-8 py-1 bg-primary-100 rounded-full mt-8 text-primary hover:bg-primary hover:text-white transition-all duration-300" round>
                         Selengkapnya <AngleRight class="ml-2 h-4" />
                     </Link>
                 </div>

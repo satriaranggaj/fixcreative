@@ -45,7 +45,7 @@ const formatDate = (dateString) => {
   <section class="mt-20 px-4 py-4">
     <div class="text-center">
       <h1 class="text-2xl font-bold sm:text-4xl">ARTICLES</h1>
-      <div class="w-32 h-1 bg-primary mt-2 mx-auto"></div>
+      <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
     </div>
 
     <div class="mt-12">
@@ -72,7 +72,7 @@ const formatDate = (dateString) => {
               <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
 
               <n-button
-                class="text-black"
+                class="text-white"
                 type="primary"
                 @click="$inertia.visit(route('article.show', { id: article.slug }))"
               >

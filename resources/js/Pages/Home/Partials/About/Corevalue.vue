@@ -20,7 +20,7 @@ onMounted(() => {
 <template>
     <section class="mt-8 px-4 py-4">
         <div class="text-center mb-8">
-            <h1 class="text-xl font-bold sm:text-2xl">NILAI INTI</h1>
+            <h1 class="text-xl font-bold sm:text-2xl text-primary-500">NILAI INTI</h1>
             <h2 class="text-2xl font-black text-primary sm:text-4xl">KENAPA MEMILIH KAMI</h2>
         </div>
         <div class="flex justify-center flex-wrap">
@@ -29,7 +29,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Creativity & Innovation
                     </h2>
-                    <div class="ml-4 px-4 py-3 rounded-full bg-primary">
+                    <div class="ml-4 px-4 py-3 rounded-full bg-primary text-white">
                         <LightbulbRegular class="h-6"/>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Quality & Excellence
                     </h2>
-                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
+                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary text-white">
                         <Trophy class="h-6"/>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Client-Centric Approach
                     </h2>
-                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
+                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary text-white">
                         <Handshake class="h-6"/>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Integrity & Professionalism
                     </h2>
-                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
+                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary text-white">
                         <BalanceScale class="h-6"/>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Impactful Storytelling
                     </h2>
-                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
+                    <div class="ml-4 px-3 py-3.5 rounded-full bg-primary text-white">
                         <BookOpen class="h-6"/>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ onMounted(() => {
                     <h2 class="text-xl font-bold">
                         Collaboration & Growth
                     </h2>
-                    <div class="ml-4 px-3 py-3 rounded-full bg-primary">
+                    <div class="ml-4 px-3 py-3 rounded-full bg-primary text-white">
                         <Rocket class="h-6"/>
                     </div>  
                 </div>

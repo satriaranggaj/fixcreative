@@ -20,7 +20,7 @@ onMounted(() => {
 <template>
     <section class="mt-8 px-4 py-4">
         <div class="text-center mb-8">
-            <h1 class="text-xl font-bold sm:text-2xl">NILAI INTI</h1>
+            <h1 class="text-xl font-bold sm:text-2xl text-primary-500">NILAI INTI</h1>
             <h2 class="text-2xl font-black text-primary sm:text-4xl">KENAPA MEMILIH KAMI</h2>
         </div>
         <div class="flex justify-center flex-wrap">
@@ -30,7 +30,7 @@ onMounted(() => {
                         Creativity & Innovation
                     </h2>
                     <div class="ml-4 px-4 py-3 rounded-full bg-primary">
-                        <LightbulbRegular class="h-6"/>
+                        <LightbulbRegular class="h-6 text-white"/>
                     </div>
                 </div>
                 <div class="my-4">
@@ -48,7 +48,7 @@ onMounted(() => {
                         Quality & Excellence
                     </h2>
                     <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
-                        <Trophy class="h-6"/>
+                        <Trophy class="h-6 text-white"/>
                     </div>
                 </div>
                 <div class="my-4">
@@ -66,7 +66,7 @@ onMounted(() => {
                         Client-Centric Approach
                     </h2>
                     <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
-                        <Handshake class="h-6"/>
+                        <Handshake class="h-6 text-white"/>
                     </div>
                 </div>
                 <div class="my-4">
@@ -84,7 +84,7 @@ onMounted(() => {
                         Integrity & Professionalism
                     </h2>
                     <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
-                        <BalanceScale class="h-6"/>
+                        <BalanceScale class="h-6 text-white"/>
                     </div>
                 </div>
                 <div class="my-4">
@@ -102,7 +102,7 @@ onMounted(() => {
                         Impactful Storytelling
                     </h2>
                     <div class="ml-4 px-3 py-3.5 rounded-full bg-primary">
-                        <BookOpen class="h-6"/>
+                        <BookOpen class="h-6 text-white"/>
                     </div>
                 </div>
                 <div class="my-4">
@@ -120,7 +120,7 @@ onMounted(() => {
                         Collaboration & Growth
                     </h2>
                     <div class="ml-4 px-3 py-3 rounded-full bg-primary">
-                        <Rocket class="h-6"/>
+                        <Rocket class="h-6 text-white"/>
                     </div>  
                 </div>
                 <div class="my-4">
