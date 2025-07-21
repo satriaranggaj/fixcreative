@@ -7,8 +7,8 @@
         <div class="absolute z-40 px-8 lg:px-32 xl:w-[80%]">
             <h1 class="text-3xl font-bold md:text-7xl sm:text-5xl">YOUR MULTIMEDIA GROWTH PARTNER</h1>
             <p  class="text-lg font-semibold mt-8 sm:text-3xl">Creativity Without Limits, Results Beyond Expectations.</p>
-            <Link :href="route('about')" class="flex items-center w-fit px-8 py-2 bg-black rounded-full  mt-8 text-primary text-lg hover:bg-primary hover:text-black transition-all duration-300" round>
-                Telusuri <AngleRight class="ml-2 h-4" />
+            <Link :href="route('contact')" class="flex items-center w-fit px-8 py-2 bg-black rounded-full  mt-8 text-primary text-lg hover:bg-primary hover:text-black transition-all duration-300" round>
+                Booking <AngleRight class="ml-2 h-4" />
             </Link>
         </div>
         <n-carousel

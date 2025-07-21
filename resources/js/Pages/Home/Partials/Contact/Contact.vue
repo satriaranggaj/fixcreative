@@ -7,13 +7,13 @@ const form = reactive({
   nama: '',
   instagram: '',
   email: '',
-  divisi: null, // Tambahkan ini
+  divisi: null, 
   title: null,
   alamat: '',
   estimasi: '',
   estimasiRaw: '',
-  pengetahuan: '',
-  alasan: '',
+  pengetahuan: null,
+  alasan: null,
   harapan: '',
   processing: false
 })
@@ -21,7 +21,7 @@ const form = reactive({
 const rules = {
   nama: { required: true, message: 'Nama wajib diisi', trigger: 'blur' },
   email: { required: true, message: 'Email wajib diisi', trigger: 'blur' },
-  divisi: { required: true, message: 'Divisi wajib dipilih', trigger: 'change' }, // Aturan divisi
+  divisi: { required: true, message: 'Divisi wajib dipilih', trigger: 'change' }, 
   title: { required: true, message: 'Kebutuhan wajib dipilih', trigger: 'change' },
   estimasi: { required: true, message: 'Estimasi wajib diisi', trigger: 'blur' },
   alamat: { required: true, message: 'Alamat wajib diisi', trigger: 'blur' },
@@ -37,7 +37,6 @@ const divisiOptions = [
   { label: 'Studio', value: 'Studio' },
 ]
 
-// KELOMPOK KEBUTUHAN BERDASARKAN DIVISI
 const kebutuhanOptions = {
   Fotografi: [
     { label: 'Wedding', value: 'Wedding' },
@@ -65,7 +64,6 @@ const kebutuhanOptions = {
   ]
 }
 
-// ✅ Computed: kebutuhan berdasarkan divisi yang dipilih
 const formatedKebutuhan = computed(() => {
   return kebutuhanOptions[form.divisi] || []
 })
