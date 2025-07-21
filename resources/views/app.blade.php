@@ -19,6 +19,27 @@
     <meta property="og:image" content="{{ $meta['image'] ?? asset('img/logo/logo_fixcreative.jpg') }}">
     <meta property="og:url" content="{{ $meta['url'] ?? url()->current() }}">
 
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "PhotoStudio",
+            "name": "Fix Creative Studio",
+            "image": "https://fixcreative.co.id/favicons/favicon.ico",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bekasi",
+                "addressRegion": "Jawa Barat",
+                "postalCode": "17426",
+                "streetAddress": "Jl. Wibawa Mukti II No.RT06/04, Kel. Jatisari, Kec. Jatiasih"
+            },
+            "openingHours": "Mo-Su 08:00-21:00",
+            "telephone": "+62 858 9493 4143",
+            "url": "https://fixcreative.co.id"
+        }
+    </script>
+    <!-- Schema.org for Google -->
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $meta['title'] ?? 'Fix Creative - Jasa Multimedia & Event Organizer' }}">
