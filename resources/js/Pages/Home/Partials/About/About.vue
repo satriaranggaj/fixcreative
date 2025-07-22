@@ -34,6 +34,7 @@
                             <strong>2. Divisi Agency – Solusi Branding dan Digital Marketing</strong>
                             <p class="ml-4">Dalam era digital saat ini, membangun identitas brand yang kuat sangatlah penting. Divisi Agency Fix Creative Production House hadir untuk membantu bisnis dan individu dalam memperkuat branding serta meningkatkan jangkauan audiens dengan strategi pemasaran yang efektif. Layanan yang kami tawarkan meliputi:</p>
                             <ul style="list-style-type: disc;" class="ml-12">
+                                <li><strong>Web Development:</strong> Pengembangan website dan aplikasi web yang kreatif dan interaktif untuk memenuhi kebutuhan bisnis dan individu.</li>
                                 <li><strong>Strategi Digital Marketing:</strong> Perencanaan dan eksekusi kampanye pemasaran digital yang sesuai dengan target pasar.</li>
                                 <li><strong>Social Media Management:</strong> Pengelolaan akun media sosial secara profesional untuk meningkatkan engagement dan brand awareness.</li>
                                 <li><strong>Desain Grafis:</strong> Pembuatan desain visual yang menarik untuk kebutuhan promosi, branding, dan komunikasi bisnis.</li>

@@ -20,9 +20,16 @@ const form = reactive({
 
 const rules = {
   nama: { required: true, message: 'Nama wajib diisi', trigger: 'blur' },
+  instagram: { required: true, message: 'Instagram wajib diisi', trigger: 'blur' },
   email: { required: true, message: 'Email wajib diisi', trigger: 'blur' },
   divisi: { required: true, message: 'Divisi wajib dipilih', trigger: 'change' }, 
   title: { required: true, message: 'Kebutuhan wajib dipilih', trigger: 'change' },
+  tanggal: { required: true, message: 'Tanggal wajib dipilih', trigger: 'change' },
+  jam_mulai: { required: true, message: 'Jam Mulai wajib dipilih', trigger: 'change' },
+  jam_selesai: { required: true, message: 'Jam Selesai wajib dipilih', trigger: 'change' },
+  pengetahuan: { required: true, message: 'Pengetahuan wajib dipilih', trigger: 'change' },
+  alasan: { required: true, message: 'Alasan wajib diisi', trigger: 'change' },
+  harapan: { required: true, message: 'Harapan wajib diisi', trigger: 'blur' },
   estimasi: { required: true, message: 'Estimasi wajib diisi', trigger: 'blur' },
   alamat: { required: true, message: 'Alamat wajib diisi', trigger: 'blur' },
 }
@@ -32,25 +39,48 @@ const time = ref(null)
 const timeSelesai = ref(null)
 
 const divisiOptions = [
+  { label: 'Wedding', value: 'Wedding' },
   { label: 'Fotografi', value: 'Fotografi' },
   { label: 'Agency', value: 'Agency' },
   { label: 'Studio', value: 'Studio' },
+  { label: 'Web & App Developer', value: 'Web & App Developer' },
 ]
 
 const kebutuhanOptions = {
+  Wedding: [
+    { label: 'All In Package Wedding', value: 'All In Package Wedding' },
+    { label: 'All In Package Wedding & Prewedding', value: 'All In Package Wedding & Prewedding' },
+    { label: 'Wedding Foto & Video', value: 'Wedding Foto & Video' },
+    { label: 'Prewedding Foto & Video', value: 'Prewedding Foto & Video' },
+    { label: 'Wedding Foto', value: 'Wedding Foto' },
+    { label: 'Prewedding Foto', value: 'Prewedding Foto' },
+  ],
   Fotografi: [
-    { label: 'Wedding', value: 'Wedding' },
-    { label: 'Prewedding', value: 'Prewedding' },
+    { label: 'Foto Keluarga', value: 'Foto Keluarga' },
+    { label: 'Family Gathering', value: 'Family Gathering' },
+    { label: 'Seminar', value: 'Seminar' },
+    { label: 'Konferensi', value: 'Konferensi' },
+    { label: 'Pameran', value: 'Pameran' },
+    { label: 'Pertunjukan', value: 'Pertunjukan' },
+    { label: 'Festival', value: 'Festival' },
+    { label: 'Lomba', value: 'Lomba' },
+    { label: 'Acara Pentas', value: 'Acara Pentas' },
+    { label: 'Acara Perusahaan', value: 'Acara Perusahaan' },
+    { label: 'Acara Sekolah/Kampus/Perguruan Tinggi', value: 'Acara Sekolah/Kampus/Perguruan Tinggi' },
+    { label: 'Buku Tahunan', value: 'Buku Tahunan' },
     { label: 'Pengajian / Siraman', value: 'Pengajian / Siraman' },
-    { label: 'Wisuda', value: 'Wisuda' },
+    { label: 'Lainnya', value: 'Lainnya' },
   ],
   Agency: [
     { label: 'Multicam Live streaming', value: 'Multicam Live streaming' },
     { label: 'Video Spin 360', value: 'Video Spin 360' },
-    { label: 'Web Development', value: 'Web Development' },
-    { label: 'Web Design', value: 'Web Design' },
-    { label: 'App Development', value: 'App Development' },
-    { label: 'App Design', value: 'App Design' },
+    { label: 'Company Profile', value: 'Company Profile' },
+    { label: 'Personal Branding', value: 'Personal Branding' },
+    { label: 'Branding Company', value: 'Branding Company' },
+    { label: 'Digital Marketing', value: 'Digital Marketing' },
+    { label: 'Social Media', value: 'Social Media' },
+    { label: 'Kampanye Iklan', value: 'Kampanye Iklan' },
+    { label: 'Lainnya', value: 'Lainnya' },
   ],
   Studio: [
     { label: 'Photo & Video Wedding', value: 'Photo & Video Wedding' },
@@ -61,7 +91,16 @@ const kebutuhanOptions = {
     { label: 'Sewa Blower', value: 'Sewa Blower' },
     { label: 'Sewa Genset', value: 'Sewa Genset' },
     { label: 'Sewa AC', value: 'Sewa AC' },
-  ]
+    { label: 'Lainnya', value: 'Lainnya' },
+  ],
+  'Web & App Developer': [
+    { label: 'Web Development', value: 'Web Development' },
+    { label: 'Web Design', value: 'Web Design' },
+    { label: 'App Development', value: 'App Development' },
+    { label: 'App Design', value: 'App Design' },
+    { label: 'Optimasi SEO', value: 'Optimasi SEO' },
+    { label: 'Lainnya', value: 'Lainnya' },
+  ],
 }
 
 const formatedKebutuhan = computed(() => {
@@ -73,18 +112,6 @@ const formatedPengetahuan = [
   { label: 'Instagram', value: 'Instagram' },
   { label: 'Google', value: 'Google' },
   { label: 'Lainnya', value: 'Lainnya' },
-]
-
-const formatedAlasan = [
-  { label: 'Good Result Take a Picture', value: 'Good Result Take a Picture' },
-  { label: 'Good Result Take a Video', value: 'Good Result Take a Video' },
-  { label: 'Good Result Take a Photo and Video', value: 'Good Result Take a Photo and Video' },
-  { label: 'Good Result Take a Photo, Video and Live Stream', value: 'Good Result Take a Photo, Video and Live Stream' },
-  { label: 'Good Result Take a Photo, Video, Live Stream and Sound', value: 'Good Result Take a Photo, Video, Live Stream and Sound' },
-  { label: 'Good Result Take a Photo, Video, Live Stream, Sound and Rigging', value: 'Good Result Take a Photo, Video, Live Stream, Sound and Rigging' },
-  { label: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging and Blower', value: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging and Blower' },
-  { label: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging, Blower and Genset', value: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging, Blower and Genset' },
-  { label: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging, Blower, Genset and AC', value: 'Good Result Take a Photo, Video, Live Stream, Sound, Rigging, Blower, Genset and AC' },
 ]
 
 const message = useMessage()
@@ -100,26 +127,35 @@ function handleEstimasiInput(value) {
   form.estimasi = formatRupiah(raw)
 }
 
-const submit = () => {
-  form.processing = true
+const submit = async () => {
+  form.processing = true;
 
-  const tanggal = new Date(timestamp.value).toLocaleDateString('id-ID', {
-    day: 'numeric', month: 'long', year: 'numeric'
-  })
+  // VALIDASI TERLEBIH DAHULU
+  await formRef.value?.validate((errors) => {
+    if (errors) {
+      form.processing = false;
+      message.error("Silakan lengkapi semua isian yang wajib diisi.");
+      return;
+    }
 
-  const jamMulai = new Date(time.value).toLocaleTimeString('id-ID', {
-    hour: '2-digit', minute: '2-digit'
-  })
+    // Semua data valid → lanjut kirim ke WhatsApp
+    const tanggal = new Date(timestamp.value).toLocaleDateString('id-ID', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
 
-  const jamSelesai = new Date(timeSelesai.value).toLocaleTimeString('id-ID', {
-    hour: '2-digit', minute: '2-digit'
-  })
+    const jamMulai = new Date(time.value).toLocaleTimeString('id-ID', {
+      hour: '2-digit', minute: '2-digit'
+    });
 
-  const formattedEstimasi = new Intl.NumberFormat('id-ID').format(form.estimasiRaw)
+    const jamSelesai = new Date(timeSelesai.value).toLocaleTimeString('id-ID', {
+      hour: '2-digit', minute: '2-digit'
+    });
 
-  const waMessage = `Assalamualaikum
+    const formattedEstimasi = new Intl.NumberFormat('id-ID').format(form.estimasiRaw);
 
-Helo Admin Fix Creative.
+    const waMessage = `Assalamu'alaikum wr. wb.
+
+Halo Admin Fix Creative.
 Saya ${form.nama}, saya tertarik Menggunakan Jasa Fix Creative
 
 Nama: ${form.nama}
@@ -138,15 +174,15 @@ Saya mengetahui Fix Creative dari ${form.pengetahuan}
 
 *Yang diharapkan dari Fix Creative:* ${form.harapan}
 
-Boleh di info Pricelistnya, Terimakasih Fix Creative`
+Boleh di info Pricelistnya, Terimakasih Fix Creative`;
 
-  const encoded = encodeURIComponent(waMessage)
-  const nomorWA = '6285894934143'
-  const waLink = `https://wa.me/${nomorWA}?text=${encoded}`
-
-  window.open(waLink, '_blank')
-  form.processing = false
-}
+    const encoded = encodeURIComponent(waMessage);
+    const nomorWA = '6285894934143';
+    const waLink = `https://wa.me/${nomorWA}?text=${encoded}`;
+    window.open(waLink, '_blank');
+    form.processing = false;
+  });
+};
 </script>
 
 <template>
@@ -223,7 +259,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
                         </n-form-item>
 
                         <n-form-item path="alasan" label="Mengapa anda memilih Fix Creative?">
-                            <n-select v-model:value="form.alasan" :options="formatedAlasan" />
+                            <n-input v-model:value="form.alasan" type="textarea" placeholder="Alasan" />
                         </n-form-item>
 
                         <n-form-item path="harapan" label="Yang anda harapkan dari Fix Creative">
@@ -231,7 +267,7 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`
                         </n-form-item>
 
                         <div class="flex justify-start">
-                            <n-button attr-type="submit" type="primary" size="large" :disabled="form.processing">
+                            <n-button attr-type="submit" @click="submit" type="primary" size="large" :loading="form.processing">
                                 Submit
                             </n-button>
                         </div>
