@@ -78,7 +78,7 @@ const getFirstImage = (imageData) => {
           />
           <div class="desc px-5 py-5">
             <h2 class="text-lg font-bold text-white">{{ portfolio.title }}</h2>
-            <div class="flex mb-2 text-sm text-gray-500">
+            <div class="flex mb-2 text-sm">
               <p class="text-white">{{ formatDate(portfolio.created_at) }}</p>
               <p class="mx-2 text-white">-</p>
               <p class="text-white">{{ portfolio.category.name }}</p>

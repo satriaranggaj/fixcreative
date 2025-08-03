@@ -72,26 +72,41 @@ const getFirstImage = (imageData) => {
         </section>
         <section class="px-4 py-4 w-[90%] mx-auto">
             <div class="flex flex-wrap justify-center gap-3 lg:flex-nowrap">
-                <div v-for="portfolio in lastportfolios" :key="portfolio.id" class="w-full h-full">
-                    <n-card hoverable>
-                        <img
-                            :src="`/storage/${getFirstImage(portfolio.image)}`"
-                            class="w-full h-48 object-cover"
-                            alt="Portfolio Image"
-                            loading="lazy"
-                        />
-                        <article class="p-4">
-                            <h2 class="text-lg font-bold line-clamp-1">{{ portfolio.title }}</h2>
-                            <div class="flex mb-2 text-gray-500">
-                                <p>{{ formatDate(portfolio.created_at) }}</p> <p class="mx-2">-</p> <p>{{ portfolio.category.name }}</p>
-                            </div>
-                            <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="portfolio.content"></div>
-                            <n-button class="text-white" type="primary" @click="$inertia.visit(route('portfolio.show', { id: portfolio.slug }))">Read More</n-button>
-                        </article>
-                    </n-card>
+                <div
+                    v-for="portfolio in lastportfolios"
+                    :key="portfolio.id"
+                    class="card w-full h-full rounded-lg bg-white shadow hover:shadow-md transition-shadow duration-300 overflow-hidden relative"
+                >
+                <img
+                    :src="`/storage/${getFirstImage(portfolio.image)}`"
+                    class="w-full h-48 object-cover"
+                    alt="Portfolio Image"
+                    loading="lazy"
+                />
+                <div class="desc px-5 py-5">
+                    <h2 class="text-lg font-bold text-white">{{ portfolio.title }}</h2>
+                    <div class="flex mb-2 text-sm text-gray-300">
+                    <p>{{ formatDate(portfolio.created_at) }}</p>
+                    <p class="mx-2">-</p>
+                    <p>{{ portfolio.category.name }}</p>
+                    </div>
+                    <div
+                    class="mb-4 text-justify line-clamp-5 text-white"
+                    v-html="portfolio.content"
+                    />
+                    <n-button
+                    class="text-primary bg-white"
+                    type="primary"
+                    size="small"
+                    @click="$inertia.visit(route('portfolio.show', { id: portfolio.slug }))"
+                    >
+                    Read More
+                    </n-button>
+                </div>
                 </div>
             </div>
         </section>
+
     </HomeLayout>
 </template>
 <style lang="scss" scoped>
@@ -99,5 +114,24 @@ const getFirstImage = (imageData) => {
     width: 100%;
     height: auto;
     margin: 3px auto;
+}
+.card {
+  overflow: hidden;
+  position: relative;
+  
+  .desc {
+    opacity: 0;
+    transform: translateY(100%);
+    height: fit-content;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.500);
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+  }
+}
+.card:hover .desc {
+  transform: translateY(0);
+  opacity: 1;
 }
 </style>
