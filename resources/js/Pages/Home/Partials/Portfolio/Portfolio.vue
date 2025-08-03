@@ -68,27 +68,27 @@ const getFirstImage = (imageData) => {
         <div
           v-for="portfolio in filteredPortfolios"
           :key="portfolio.id"
-          class="break-inside-avoid overflow-hidden rounded-lg bg-white shadow hover:shadow-md transition-shadow duration-300"
+          class="card break-inside-avoid overflow-hidden rounded-lg bg-white shadow hover:shadow-md transition-shadow duration-300"
         >
           <img
             :src="`/storage/${getFirstImage(portfolio.image)}`"
-            class="w-full h-auto object-cover"
+            class="w-full h-full object-cover"
             alt="Portfolio Image"
             loading="lazy"
           />
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-primary">{{ portfolio.title }}</h2>
+          <div class="desc px-5 py-5">
+            <h2 class="text-lg font-bold text-white">{{ portfolio.title }}</h2>
             <div class="flex mb-2 text-sm text-gray-500">
-              <p>{{ formatDate(portfolio.created_at) }}</p>
-              <p class="mx-2">-</p>
-              <p>{{ portfolio.category.name }}</p>
+              <p class="text-white">{{ formatDate(portfolio.created_at) }}</p>
+              <p class="mx-2 text-white">-</p>
+              <p class="text-white">{{ portfolio.category.name }}</p>
             </div>
             <div
-              class="text-gray-600 mb-4 text-justify line-clamp-5"
+              class="mb-4 text-justify line-clamp-5 text-white"
               v-html="portfolio.content"
             />
             <n-button
-              class="text-white"
+              class="text-primary bg-white"
               type="primary"
               size="small"
               @click="$inertia.visit(route('portfolio.show', { id: portfolio.slug }))"
@@ -101,3 +101,24 @@ const getFirstImage = (imageData) => {
     </div>
   </section>
 </template>
+<style lang="scss" scoped>
+.card {
+  overflow: hidden;
+  position: relative;
+  
+  .desc {
+    opacity: 0;
+    transform: translateY(100%);
+    height: fit-content;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.500);
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+  }
+}
+.card:hover .desc {
+  transform: translateY(0);
+  opacity: 1;
+}
+</style>
