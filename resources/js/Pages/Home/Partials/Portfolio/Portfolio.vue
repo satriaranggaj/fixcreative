@@ -1,14 +1,18 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const portfolios = usePage().props.portfolios;
+const categories = usePage().props.portfolio_categories;
 
-const lastPortfolios = computed(() => {
-  return portfolios
-    .slice()
-    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    .slice(0, 3);
+const selectedCategory = ref(''); // kosong = semua
+
+const filteredPortfolios = computed(() => {
+  if (!selectedCategory.value) return portfolios;
+
+  return portfolios.filter(
+    (portfolio) => portfolio.category?.id === selectedCategory.value
+  );
 });
 
 const formatDate = (dateString) => {
@@ -37,10 +41,32 @@ const getFirstImage = (imageData) => {
       <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
     </div>
 
+    <!-- ✅ Tab Navigation -->
+    <div class="flex justify-center mt-6">
+      <n-tabs
+        type="line"
+        v-model:value="selectedCategory"
+        size="large"
+        justify-content="center"
+      >
+        <!-- Tab Semua -->
+        <n-tab-pane name="" tab="Semua" />
+
+        <!-- Tab Kategori -->
+        <n-tab-pane
+          v-for="cat in categories"
+          :key="cat.id"
+          :name="cat.id"
+          :tab="cat.name"
+        />
+      </n-tabs>
+    </div>
+
+    <!-- Portfolios -->
     <div class="mt-12">
       <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         <div
-          v-for="portfolio in lastPortfolios"
+          v-for="portfolio in filteredPortfolios"
           :key="portfolio.id"
           class="break-inside-avoid overflow-hidden rounded-lg bg-white shadow hover:shadow-md transition-shadow duration-300"
         >
@@ -75,21 +101,3 @@ const getFirstImage = (imageData) => {
     </div>
   </section>
 </template>
-
-<style scoped>
-.break-inside-avoid {
-  break-inside: avoid;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-ol {
-  list-style-type: decimal;
-  padding-left: 1.25rem;
-  margin-bottom: 1rem;
-}
-</style>

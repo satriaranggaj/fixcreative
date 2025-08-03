@@ -86,7 +86,7 @@ const getFirstImage = (imageData) => {
                                 <p>{{ formatDate(portfolio.created_at) }}</p> <p class="mx-2">-</p> <p>{{ portfolio.category.name }}</p>
                             </div>
                             <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="portfolio.content"></div>
-                            <n-button class="text-black" type="primary" @click="$inertia.visit(route('portfolio.show', { id: portfolio.slug }))">Read More</n-button>
+                            <n-button class="text-white" type="primary" @click="$inertia.visit(route('portfolio.show', { id: portfolio.slug }))">Read More</n-button>
                         </article>
                     </n-card>
                 </div>

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use App\Models\Article;
 use App\Models\Career;
+use App\Models\Article;
 use App\Models\Portfolio;
+use App\Models\ArticleCategory;
+use App\Models\PortfolioCategory;
 
 class HomeController extends Controller
 {
@@ -127,7 +129,8 @@ class HomeController extends Controller
     public function portfolio()
     {
         return Inertia::render('Home/Portfolio', [
-            'portfolios' => Portfolio::with('category')->get(),
+            'portfolios' => Portfolio::with('category')->latest()->get(),
+            'portfolio_categories' => PortfolioCategory::all(),
             'meta' => [
                 'title' => 'Portfolio',
                 'description' => 'Portfolio dari Fix Creative Production House.',
@@ -138,10 +141,13 @@ class HomeController extends Controller
         ]);
     }
 
+
+
     public function article()
     {
         return Inertia::render('Home/Article', [
             'articles' => Article::with('category')->get(),
+            'article_categories' => ArticleCategory::all(),
             'meta' => [
                 'title' => 'Artikel',
                 'description' => 'Berita dan Informasi terbaru dari Fix Creative Production House.',

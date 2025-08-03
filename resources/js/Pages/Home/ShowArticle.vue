@@ -73,7 +73,7 @@ const formatDate = (date) => {
                                 <p>{{ formatDate(article.created_at) }}</p> <p class="mx-2">-</p> <p>{{ article.category.name }}</p>
                             </div>
                             <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
-                            <n-button class="text-black" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
+                            <n-button class="text-white" type="primary" @click="$inertia.visit(route('article.show', { id: article.slug }))">Read More</n-button>
                         </article>
                     </n-card>
                 </div>

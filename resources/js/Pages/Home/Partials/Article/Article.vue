@@ -1,22 +1,29 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const articles = usePage().props.articles;
+const categories = usePage().props.article_categories;
+
+const selectedCategory = ref('');
+
+const filteredArticles = computed(() => {
+  if (!selectedCategory.value) return articles;
+
+  return articles.filter(
+    (article) => article.category?.id === selectedCategory.value
+  );
+});
 
 const getTextOnlyContent = (content) => {
   const div = document.createElement('div');
   div.innerHTML = content;
 
-  // Hapus semua <img>
   div.querySelectorAll('img').forEach(img => img.remove());
-
-  // Hapus elemen <p> yang kosong termasuk jika hanya berisi karakter tak terlihat
   div.querySelectorAll('p').forEach(p => {
-    // Bersihkan HTML dari &nbsp;, zero-width space, dan whitespace
     const cleaned = p.innerHTML
       .replace(/&nbsp;/gi, '')
-      .replace(/[\u200B-\u200D\uFEFF]/g, '') // zero-width chars
+      .replace(/[\u200B-\u200D\uFEFF]/g, '')
       .replace(/\s+/g, '');
 
     if (cleaned === '') {
@@ -27,10 +34,6 @@ const getTextOnlyContent = (content) => {
   return div.innerHTML;
 };
 
-const sortedArticles = computed(() => {
-  return [...articles].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-});
-
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString('id-ID', {
     year: 'numeric',
@@ -38,7 +41,6 @@ const formatDate = (dateString) => {
     day: 'numeric',
   });
 };
-
 </script>
 
 <template>
@@ -48,10 +50,28 @@ const formatDate = (dateString) => {
       <div class="w-32 h-1 bg-primary-100 mt-2 mx-auto"></div>
     </div>
 
+    <!-- ✅ Tab Navigation -->
+    <div class="flex justify-center mt-6">
+      <n-tabs
+        type="line"
+        v-model:value="selectedCategory"
+        size="large"
+        justify-content="center"
+      >
+        <n-tab-pane name="" tab="Semua" />
+        <n-tab-pane
+          v-for="cat in categories"
+          :key="cat.id"
+          :name="cat.id"
+          :tab="cat.name"
+        />
+      </n-tabs>
+    </div>
+
     <div class="mt-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         <div
-          v-for="article in sortedArticles"
+          v-for="article in filteredArticles"
           :key="article.id"
         >
           <n-card hoverable class="w-full">
@@ -69,7 +89,10 @@ const formatDate = (dateString) => {
                 <p>{{ article.category.name }}</p>
               </div>
 
-              <div class="text-gray-600 mb-4 text-justify line-clamp-5" v-html="getTextOnlyContent(article.content)" />
+              <div
+                class="text-gray-600 mb-4 text-justify line-clamp-5"
+                v-html="getTextOnlyContent(article.content)"
+              />
 
               <n-button
                 class="text-white"

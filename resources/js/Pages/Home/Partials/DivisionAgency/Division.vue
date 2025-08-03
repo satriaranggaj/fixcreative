@@ -61,6 +61,6 @@
     object-position: center;
     width: 80%;
     aspect-ratio: 5/6;
-    box-shadow: 100px 100px 0px #fcc600;
+    box-shadow: 100px 100px 0px #5C5C5C;
 }
 </style>
