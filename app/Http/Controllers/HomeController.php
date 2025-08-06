@@ -75,6 +75,8 @@ class HomeController extends Controller
             ->with('category')
             ->firstOrFail();
 
+        $portfolio->content = html_entity_decode($portfolio->content);
+
         $portfolios = Portfolio::with('category')->get();
 
         return Inertia::render('Home/ShowPortfolio', [

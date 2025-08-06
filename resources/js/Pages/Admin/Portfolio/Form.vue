@@ -101,6 +101,8 @@ onMounted(async () => {
             width: '100%',
             height: 300,
             notification: { duration: 0 },
+            allowedContent: true,
+            extraAllowedContent: 'iframe[*]',
         });
 
         editor.value.on('change', () => {

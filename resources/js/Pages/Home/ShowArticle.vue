@@ -59,7 +59,6 @@ const formatDate = (date) => {
                 <h1 class="text-3xl font-bold">{{ article.title }}</h1>
                 <p class="text-gray-500 mb-4">{{ formatDate(article.created_at) }} - {{ article.category.name }}</p>
                 <div class="prose max-w-none text-gray-700 leading-relaxed text-base" v-html="article.content"></div>
-
             </article>
         </section>
         <section class="px-4 py-4 w-[90%] mx-auto">

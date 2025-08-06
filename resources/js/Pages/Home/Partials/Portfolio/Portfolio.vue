@@ -83,10 +83,6 @@ const getFirstImage = (imageData) => {
               <p class="mx-2 text-white">-</p>
               <p class="text-white">{{ portfolio.category.name }}</p>
             </div>
-            <div
-              class="mb-4 text-justify line-clamp-5 text-white"
-              v-html="portfolio.content"
-            />
             <n-button
               class="text-primary bg-white"
               type="primary"

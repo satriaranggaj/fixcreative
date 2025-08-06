@@ -8,6 +8,29 @@ const portfolio = usePage().props.portfolio;
 
 const portfolios = usePage().props.portfolios;
 
+const getTextOnlyContent = (content) => {
+  const div = document.createElement('div');
+  div.innerHTML = content;
+
+  // Hapus semua <iframe>
+  div.querySelectorAll('iframe').forEach(iframe => iframe.remove());
+
+  // Hapus elemen <p> yang kosong termasuk jika hanya berisi karakter tak terlihat
+  div.querySelectorAll('p').forEach(p => {
+    // Bersihkan HTML dari &nbsp;, zero-width space, dan whitespace
+    const cleaned = p.innerHTML
+      .replace(/&nbsp;/gi, '')
+      .replace(/[\u200B-\u200D\uFEFF]/g, '') // zero-width chars
+      .replace(/\s+/g, '');
+
+    if (cleaned === '') {
+      p.remove();
+    }
+  });
+
+  return div.innerHTML;
+};
+
 const lastportfolios = computed(() => {
     return portfolios
     .filter((item) => item.id !== portfolio.id)
@@ -53,21 +76,28 @@ const getFirstImage = (imageData) => {
             </div>
             <article class="bg-white p-6 rounded-lg shadow">
                 <n-image-group>
-                    <div class="columns-1 sm:columns-2 md:columns-3 gap-2 mb-6 space-y-1/2">
+                    <div
+                        :class="[
+                        'gap-2 mb-6 space-y-1/2',
+                        getImageList(portfolio.image).length === 1
+                            ? 'columns-1'
+                            : 'columns-1 sm:columns-2 md:columns-3'
+                        ]"
+                    >
                         <n-image
-                            v-for="(img, index) in getImageList(portfolio.image)"
-                            :key="index"
-                            :src="`/storage/${img}`"
-                            class="w-full rounded-lg object-cover"
-                            alt="Portfolio Image"
-                            :style="{ breakInside: 'avoid', width: '100%', height: 'auto' }"
-                            :render-toolbar="renderToolbar"
+                        v-for="(img, index) in getImageList(portfolio.image)"
+                        :key="index"
+                        :src="`/storage/${img}`"
+                        class="w-full rounded-lg object-cover"
+                        alt="Portfolio Image"
+                        :style="{ breakInside: 'avoid', width: '100%', height: 'auto' }"
+                        :render-toolbar="renderToolbar"
                         />
                     </div>
                 </n-image-group>
                 <h1 class="text-3xl font-bold">{{ portfolio.title }}</h1>
                 <p class="text-gray-500 mb-4">{{ formatDate(portfolio.created_at) }} - {{ portfolio.category.name }}</p>
-                <div class="text-gray-700 leading-relaxed text-base" v-html="portfolio.content"></div>
+                <div class="prose max-w-none content-body" v-html="portfolio.content"></div>
             </article>
         </section>
         <section class="px-4 py-4 w-[90%] mx-auto">
@@ -90,10 +120,6 @@ const getFirstImage = (imageData) => {
                     <p class="mx-2">-</p>
                     <p>{{ portfolio.category.name }}</p>
                     </div>
-                    <div
-                    class="mb-4 text-justify line-clamp-5 text-white"
-                    v-html="portfolio.content"
-                    />
                     <n-button
                     class="text-primary bg-white"
                     type="primary"
@@ -110,11 +136,30 @@ const getFirstImage = (imageData) => {
     </HomeLayout>
 </template>
 <style lang="scss" scoped>
-.n-image {
-    width: 100%;
+::v-deep(div.content-body) {
+    p{
+        iframe {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16 / 9;
+          border: none;
+          border-radius: 8px;
+          margin: 1rem 0;
+          display: block;
+        }
+    }
+  img {
+    max-width: 100%;
     height: auto;
-    margin: 3px auto;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+  }
 }
+
 .card {
   overflow: hidden;
   position: relative;
