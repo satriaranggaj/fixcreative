@@ -9,6 +9,9 @@ const form = reactive({
   email: '',
   divisi: null, 
   title: null,
+  tanggal: null,
+  jam_mulai: null,
+  jam_selesai: null,
   alamat: '',
   estimasi: '',
   estimasiRaw: '',
@@ -24,19 +27,33 @@ const rules = {
   email: { required: true, message: 'Email wajib diisi', trigger: 'blur' },
   divisi: { required: true, message: 'Divisi wajib dipilih', trigger: 'change' }, 
   title: { required: true, message: 'Kebutuhan wajib dipilih', trigger: 'change' },
-  tanggal: { required: true, message: 'Tanggal wajib dipilih', trigger: 'change' },
-  jam_mulai: { required: true, message: 'Jam Mulai wajib dipilih', trigger: 'change' },
-  jam_selesai: { required: true, message: 'Jam Selesai wajib dipilih', trigger: 'change' },
+   tanggal: {
+    required: true,
+    trigger: 'change',
+    validator(_, value) {
+      return value ? true : new Error('Tanggal wajib dipilih')
+    }
+  },
+  jam_mulai: {
+    required: true,
+    trigger: 'change',
+    validator(_, value) {
+      return value ? true : new Error('Jam Mulai wajib dipilih')
+    }
+  },
+  jam_selesai: {
+    required: true,
+    trigger: 'change',
+    validator(_, value) {
+      return value ? true : new Error('Jam Selesai wajib dipilih')
+    }
+  },
   pengetahuan: { required: true, message: 'Pengetahuan wajib dipilih', trigger: 'change' },
   alasan: { required: true, message: 'Alasan wajib diisi', trigger: 'change' },
   harapan: { required: true, message: 'Harapan wajib diisi', trigger: 'blur' },
   estimasi: { required: true, message: 'Estimasi wajib diisi', trigger: 'blur' },
   alamat: { required: true, message: 'Alamat wajib diisi', trigger: 'blur' },
 }
-
-const timestamp = ref(null)
-const time = ref(null)
-const timeSelesai = ref(null)
 
 const divisiOptions = [
   { label: 'Wedding', value: 'Wedding' },
@@ -139,15 +156,15 @@ const submit = async () => {
     }
 
     // Semua data valid → lanjut kirim ke WhatsApp
-    const tanggal = new Date(timestamp.value).toLocaleDateString('id-ID', {
+    const tanggal = new Date(form.tanggal).toLocaleDateString('id-ID', {
       day: 'numeric', month: 'long', year: 'numeric'
     });
 
-    const jamMulai = new Date(time.value).toLocaleTimeString('id-ID', {
+    const jamMulai = new Date(form.jam_mulai).toLocaleTimeString('id-ID', {
       hour: '2-digit', minute: '2-digit'
     });
 
-    const jamSelesai = new Date(timeSelesai.value).toLocaleTimeString('id-ID', {
+    const jamSelesai = new Date(form.jam_selesai).toLocaleTimeString('id-ID', {
       hour: '2-digit', minute: '2-digit'
     });
 
@@ -230,15 +247,15 @@ Boleh di info Pricelistnya, Terimakasih Fix Creative`;
 
                         <div class="flex gap-3">
                             <n-form-item class="w-1/3" path="tanggal" label="Tanggal">
-                                <n-date-picker class="w-full" v-model:value="timestamp" type="date" />
+                                <n-date-picker class="w-full" v-model:value="form.tanggal" type="date" />
                             </n-form-item>
 
                             <n-form-item class="w-1/3" path="jam_mulai" label="Jam Mulai">
-                                <n-time-picker class="w-full" v-model:value="time" format="h:mm a" />
+                                <n-time-picker class="w-full" v-model:value="form.jam_mulai" format="h:mm a" />
                             </n-form-item>
 
                             <n-form-item class="w-1/3" path="jam_selesai" label="Jam Selesai">
-                                <n-time-picker class="w-full" v-model:value="timeSelesai" format="h:mm a" />
+                                <n-time-picker class="w-full" v-model:value="form.jam_selesai" format="h:mm a" />
                             </n-form-item>
                         </div>
 
