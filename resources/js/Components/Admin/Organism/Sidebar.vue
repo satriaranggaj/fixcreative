@@ -19,12 +19,12 @@ import { Link } from '@inertiajs/vue3';
         >
             <template #trigger>
                 <Link
-                    :href="route('dashboard')"
+                    :href="route('admin.dashboard')"
                     class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
-                        :class="route().current('dashboard') ? 'bg-primary text-white' : ''"
+                        :class="route().current('admin.dashboard') ? 'bg-primary text-white' : ''"
                     >
                         <Home class="h-[21px]" />
                     </div>

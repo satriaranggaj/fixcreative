@@ -5,11 +5,12 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\ArticleController;
-use App\Http\Controllers\Admin\ArticleCategoryController;
-use App\Http\Controllers\Admin\PortfolioController;
-use App\Http\Controllers\Admin\PortfolioCategoryController;
 use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Projects\ProjectController;
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ArticleCategoryController;
+use App\Http\Controllers\Admin\PortfolioCategoryController;
 
 
 Route::fallback(function () {
@@ -30,43 +31,43 @@ Route::get('/division/agency', [HomeController::class, 'ShowAgency'])->name('div
 Route::get('/division/studio', [HomeController::class, 'ShowStudio'])->name('division.studio');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/admin/dashboard', function () {
         return Inertia::render('Admin/Dashboard');
-    })->name('dashboard');
+    })->name('admin.dashboard');
 
     Route::get('/articles', [ArticleController::class, 'index'])->name('index.articles');
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('create.articles');
     Route::post('/articles', [ArticleController::class, 'store'])->name('store.articles');
     Route::get('/articles/{article:slug}/edit', [ArticleController::class, 'edit'])->name('edit.articles');
-    Route::post('/articles/{article:slug}', [ArticleController::class, 'update'])->name('update.articles');
+    Route::put('/articles/{article:slug}', [ArticleController::class, 'update'])->name('update.articles');
     Route::delete('/articles/{article:slug}', [ArticleController::class, 'destroy'])->name('destroy.articles');
 
     Route::get('/portfolios', [PortfolioController::class, 'index'])->name('index.portfolios');
     Route::get('/portfolios/create', [PortfolioController::class, 'create'])->name('create.portfolios');
     Route::post('/portfolios', [PortfolioController::class, 'store'])->name('store.portfolios');
     Route::get('/portfolios/{portfolio:slug}/edit', [PortfolioController::class, 'edit'])->name('edit.portfolios');
-    Route::post('/portfolios/{portfolio:slug}', [PortfolioController::class, 'update'])->name('update.portfolios');
+    Route::put('/portfolios/{portfolio:slug}', [PortfolioController::class, 'update'])->name('update.portfolios');
     Route::delete('/portfolios/{portfolio:slug}', [PortfolioController::class, 'destroy'])->name('destroy.portfolios');
 
     Route::get('/article-categories', [ArticleCategoryController::class, 'index'])->name('index.article-categories');
     Route::get('/article-categories/create', [ArticleCategoryController::class, 'create'])->name('create.article-categories');
     Route::post('/article-categories', [ArticleCategoryController::class, 'store'])->name('store.article-categories');
     Route::get('/article-categories/{articleCategory}/edit', [ArticleCategoryController::class, 'edit'])->name('edit.article-categories');
-    Route::post('/article-categories/{articleCategory}', [ArticleCategoryController::class, 'update'])->name('update.article-categories');
+    Route::put('/article-categories/{articleCategory}', [ArticleCategoryController::class, 'update'])->name('update.article-categories');
     Route::delete('/article-categories/{articleCategory}', [ArticleCategoryController::class, 'destroy'])->name('destroy.article-categories');
 
     Route::get('/portfolio-categories', [PortfolioCategoryController::class, 'index'])->name('index.portfolio-categories');
     Route::get('/portfolio-categories/create', [PortfolioCategoryController::class, 'create'])->name('create.portfolio-categories');
     Route::post('/portfolio-categories', [PortfolioCategoryController::class, 'store'])->name('store.portfolio-categories');
     Route::get('/portfolio-categories/{portfolioCategory}/edit', [PortfolioCategoryController::class, 'edit'])->name('edit.portfolio-categories');
-    Route::post('/portfolio-categories/{portfolioCategory}', [PortfolioCategoryController::class, 'update'])->name('update.portfolio-categories');
+    Route::put('/portfolio-categories/{portfolioCategory}', [PortfolioCategoryController::class, 'update'])->name('update.portfolio-categories');
     Route::delete('/portfolio-categories/{portfolioCategory}', [PortfolioCategoryController::class, 'destroy'])->name('destroy.portfolio-categories');
 
     Route::get('/careers', [CareerController::class, 'index'])->name('index.careers');
     Route::get('/careers/create', [CareerController::class, 'create'])->name('create.careers');
     Route::post('/careers', [CareerController::class, 'store'])->name('store.careers');
     Route::get('/careers/{career}/edit', [CareerController::class, 'edit'])->name('edit.careers');
-    Route::post('/careers/{career}', [CareerController::class, 'update'])->name('update.careers');
+    Route::put('/careers/{career}', [CareerController::class, 'update'])->name('update.careers');
     Route::delete('/careers/{career}', [CareerController::class, 'destroy'])->name('destroy.careers');
 });
 
@@ -74,6 +75,33 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/projects/dashboard', function () {
+        return Inertia::render('Projects/Dashboard');
+    })->name('projects.dashboard');
+
+    Route::get('/projects/list', [ProjectController::class, 'index'])->name('index.projects');
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('create.projects');
+    Route::post('/projects/list', [ProjectController::class, 'store'])->name('store.projects');
+    Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('edit.projects');
+    Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('update.projects');
+    Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('destroy.projects');
+
+    Route::get('/projects/invoices', [ProjectController::class, 'invoice'])->name('projects.invoice');
+
+    // route tambahan khusus untuk pembayaran project
+    Route::post('/projects/{project}/payments', [ProjectController::class, 'addPayment'])->name('projects.add-payment');
+    Route::post('/projects/{project}/invoice', [ProjectController::class, 'sendInvoice'])->name('projects.send-invoice');
+    Route::get('/projects/{project}/invoice/view', [ProjectController::class, 'previewInvoice'])->name('projects.invoice.view');
+    Route::get('/projects/{project}/invoice/download', [ProjectController::class, 'downloadInvoice'])->name('projects.invoice.download');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/projects/profile', [ProfileController::class, 'editProjectProfile'])->name('projects.profile.edit');
+    Route::post('/projects/profile', [ProfileController::class, 'updateProjectProfile'])->name('projects.profile.update');
+    Route::delete('/projects/profile', [ProfileController::class, 'destroyProjectProfile'])->name('projects.profile.destroy');
 });
 
 require __DIR__.'/auth.php';

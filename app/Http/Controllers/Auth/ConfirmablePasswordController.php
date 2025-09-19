@@ -20,6 +20,11 @@ class ConfirmablePasswordController extends Controller
         return Inertia::render('Admin/Auth/ConfirmPassword');
     }
 
+    public function projectShow(): Response
+    {
+        return Inertia::render('Projects/Auth/ConfirmPassword');
+    }
+
     /**
      * Confirm the user's password.
      */
@@ -36,6 +41,22 @@ class ConfirmablePasswordController extends Controller
 
         $request->session()->put('auth.password_confirmed_at', time());
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('admin.dashboard', absolute: false));
+    }
+
+    public function projectStore(Request $request): RedirectResponse
+    {
+        if (! Auth::guard('web')->validate([
+            'email' => $request->user()->email,
+            'password' => $request->password,
+        ])) {
+            throw ValidationException::withMessages([
+                'password' => __('auth.password'),
+            ]);
+        }
+
+        $request->session()->put('auth.password_confirmed_at', time());
+
+        return redirect()->intended(route('projects.dashboard', absolute: false));
     }
 }

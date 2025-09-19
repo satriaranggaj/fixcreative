@@ -24,6 +24,14 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function editProjectProfile(Request $request): Response
+    {
+        return Inertia::render('Projects/Profile/Edit', [
+            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
+            'status' => session('status'),
+        ]);
+    }
+
     /**
      * Update the user's profile information.
      */
@@ -40,6 +48,18 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit');
     }
 
+    public function updateProjectProfile(ProfileUpdateRequest $request): RedirectResponse
+    {
+        $request->user()->fill($request->validated());
+
+        if ($request->user()->isDirty('email')) {
+            $request->user()->email_verified_at = null;
+        }
+
+        $request->user()->save();
+
+        return Redirect::route('projects.profile.edit');
+    }
     /**
      * Delete the user's account.
      */
@@ -58,6 +78,24 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/login');
+        return Redirect::to('/admin/login');
+    }
+
+    public function destroyProjectProfile(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'password' => auth()->user()->password,
+        ]);
+
+        $user = $request->user();
+
+        Auth::logout();
+
+        $user->delete();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return Redirect::to('/projects/login');
     }
 }

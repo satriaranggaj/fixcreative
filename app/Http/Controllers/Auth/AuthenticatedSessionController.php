@@ -24,6 +24,13 @@ class AuthenticatedSessionController extends Controller
         ]);
     }
 
+    public function createProjects(): Response
+    {
+        return Inertia::render('Projects/Auth/Login', [
+            'canResetPassword' => Route::has('password.request'),
+            'status' => session('status'),
+        ]);
+    }
     /**
      * Handle an incoming authentication request.
      */
@@ -33,7 +40,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('admin.dashboard', absolute: false));
+    }
+
+    public function storeProjects(LoginRequest $request): RedirectResponse
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('projects.dashboard', absolute: false));
     }
 
     /**
@@ -47,6 +63,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/admin/login');
+    }
+    public function destroyProjects(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/projects/login');
     }
 }

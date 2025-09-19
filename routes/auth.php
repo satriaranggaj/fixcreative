@@ -17,10 +17,15 @@ Route::middleware('guest')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+    Route::get('admin/login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    Route::post('admin/login', [AuthenticatedSessionController::class, 'store']);
+
+    Route::get('projects/login', [AuthenticatedSessionController::class, 'createProjects'])
+        ->name('projects.login');
+
+    Route::post('projects/login', [AuthenticatedSessionController::class, 'storeProjects']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
@@ -56,4 +61,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+    Route::post('logout/projects', [AuthenticatedSessionController::class, 'destroyProjects'])
+        ->name('projects.logout');
 });

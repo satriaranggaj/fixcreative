@@ -16,7 +16,7 @@ const showingNavigationDropdown = ref(false);
                 <div class="flex items-center">
                     <!-- Logo -->
                     <div class="flex shrink-0 items-center mr-4">
-                        <Link :href="route('admin.dashboard')">
+                        <Link :href="route('projects.dashboard')">
                             <ApplicationLogo
                                 class="block h-12 w-auto fill-current text-gray-800"
                             />
@@ -26,7 +26,7 @@ const showingNavigationDropdown = ref(false);
 
                 <div class="button-logout">
                     <n-button 
-                        @click="$inertia.post(route('logout'))"
+                        @click="$inertia.post(route('projects.logout'))"
                         round
                     >
                         Log Out
