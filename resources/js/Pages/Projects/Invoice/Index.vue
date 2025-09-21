@@ -112,7 +112,7 @@ const getPaid = (payments) => {
                                         </template>
 
                                         <!-- Kalau sudah ada invoice_date -->
-                                        <template v-else>
+                                        <template v-else-if="!project.is_paid">
                                             <Link :href="route('projects.send-invoice', project.id)" method="post">
                                                 <n-button type="info" block>Kirim Ulang Invoice</n-button>
                                             </Link>
@@ -122,6 +122,22 @@ const getPaid = (payments) => {
                                             <a :href="route('projects.invoice.download', project.id)">
                                                 <n-button type="warning" block>Download Invoice</n-button>
                                             </a>
+                                            <Link
+                                                :href="route('projects.mark-paid', project.id)"
+                                                method="post"
+                                                as="button"
+                                            >
+                                                <n-button type="primary" block>Lunas</n-button>
+                                            </Link>
+                                        </template>
+                                        <template v-else>
+                                            <n-button
+                                                type="success"
+                                                block
+                                                disabled
+                                            >
+                                                Sudah Lunas
+                                            </n-button>
                                         </template>
                                     </div>
                                 </td>

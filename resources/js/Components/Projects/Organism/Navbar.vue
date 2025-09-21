@@ -8,7 +8,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 <template>
     <nav
-        class="fixed top-0 z-[1000] w-full px-24 border-b border-gray-100 bg-white"
+        class="fixed top-0 z-[1000] w-full px-5 md:px-24 border-b border-gray-100 bg-white"
     >
         <!-- Primary Navigation Menu -->
         <div class="mx-auto w-full">
@@ -18,7 +18,7 @@ const showingNavigationDropdown = ref(false);
                     <div class="flex shrink-0 items-center mr-4">
                         <Link :href="route('projects.dashboard')">
                             <ApplicationLogo
-                                class="block h-12 w-auto fill-current text-gray-800"
+                                class="block h-5 md:h-12 w-auto fill-current text-gray-800"
                             />
                         </Link>
                     </div>

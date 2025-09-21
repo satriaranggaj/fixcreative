@@ -17,7 +17,7 @@ import AppMessageListener from '@/Components/Admin/Organism/AppMessageListener.v
                         <Navbar />
                         <div class="mt-16">
                             <Sidebar />
-                            <div class="min-h-screen ml-[100px] bg-gray-100">
+                            <div class="min-h-screen md:ml-[100px] bg-gray-100">
                                 <!-- Page Content -->
                                 <main>
                                     <slot />

@@ -96,6 +96,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/projects/{project}/invoice', [ProjectController::class, 'sendInvoice'])->name('projects.send-invoice');
     Route::get('/projects/{project}/invoice/view', [ProjectController::class, 'previewInvoice'])->name('projects.invoice.view');
     Route::get('/projects/{project}/invoice/download', [ProjectController::class, 'downloadInvoice'])->name('projects.invoice.download');
+
+    Route::post('/projects/{project}/mark-paid', [ProjectController::class, 'markPaid'])->name('projects.mark-paid');
 });
 
 Route::middleware('auth')->group(function () {

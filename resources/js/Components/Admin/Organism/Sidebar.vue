@@ -11,7 +11,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 <template>
     <aside
-        class="select-none h-[calc(100vh)] pt-[61px] px-1 text-center bg-white border-r w-[100px] hidden md:block fixed top-0 left-0 z-[900] overflow-y-auto custom-scroll-y-[2px]"
+        class="h-[100px] w-full flex bottom-0 items-center md:flex-col select-none md:h-[calc(100vh)] md:pt-[61px] px-1 text-center bg-white border-r md:w-[100px] fixed md:top-0 md:left-0 z-[900] overflow-x-auto custom-scroll-x-[2px] md:overflow-y-auto md:custom-scroll-y-[2px]"
     >
         <n-tooltip
             triger="hover"
@@ -20,7 +20,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('admin.dashboard')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -41,7 +41,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('index.articles')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -62,7 +62,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('index.article-categories')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -83,7 +83,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('index.portfolios')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -104,7 +104,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('index.portfolio-categories')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -125,7 +125,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('index.careers')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"
@@ -146,7 +146,7 @@ import { Link } from '@inertiajs/vue3';
             <template #trigger>
                 <Link
                     :href="route('profile.edit')"
-                    class="w-full flex flex-col items-center py-3 cursor-pointer group gap-2"
+                    class="w-full px-5 flex flex-col items-center py-3 cursor-pointer group gap-2"
                 >
                     <div
                         class="h-[34px] w-[38px] rounded-md flex items-center justify-center text-primary hover:text-white hover:bg-primary transition-all duration-300"

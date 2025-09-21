@@ -107,7 +107,7 @@ const getPaid = (payments) => {
                                     <Link :href="route('edit.projects', project.id)" class="mr-2">
                                         <n-button type="primary">Edit</n-button>
                                     </Link>
-                                    <Link :href="route('destroy.projects', project.id)" method="delete" class="mr-2">
+                                    <Link :href="route('destroy.projects', project.id)" method="delete">
                                         <n-button type="error">Delete</n-button>
                                     </Link>
 
@@ -118,19 +118,6 @@ const getPaid = (payments) => {
                                             <Link :href="route('projects.send-invoice', project.id)" method="post">
                                                 <n-button type="info" block>Kirim Invoice</n-button>
                                             </Link>
-                                        </template>
-
-                                        <!-- Kalau sudah ada invoice_date -->
-                                        <template v-else>
-                                            <Link :href="route('projects.send-invoice', project.id)" method="post">
-                                                <n-button type="info" block>Kirim Ulang Invoice</n-button>
-                                            </Link>
-                                            <a :href="route('projects.invoice.view', project.id)" target="_blank">
-                                                <n-button type="success" block>Lihat Invoice</n-button>
-                                            </a>
-                                            <a :href="route('projects.invoice.download', project.id)">
-                                                <n-button type="warning" block>Download Invoice</n-button>
-                                            </a>
                                         </template>
                                     </div>
                                 </td>

@@ -147,7 +147,7 @@ class ProjectController extends Controller
 
         $pdf = Pdf::loadView('invoices.template', ['project' => $project]);
 
-        $fileName = 'invoice-' . $project->id . '.pdf';
+        $fileName = 'invoice-' . $project->client . '.pdf';
         $path = storage_path('app/invoices/' . $fileName);
 
         if (!file_exists(dirname($path))) {
@@ -175,13 +175,21 @@ class ProjectController extends Controller
     {
         $project->load(['items', 'payments']);
         $pdf = Pdf::loadView('invoices.template', compact('project'));
-        return $pdf->stream('invoice-' . $project->id . '.pdf');
+        return $pdf->stream('invoice-' . $project->client . '.pdf');
     }
 
     public function downloadInvoice(Project $project)
     {
         $project->load(['items', 'payments']);
         $pdf = Pdf::loadView('invoices.template', compact('project'));
-        return $pdf->download('invoice-' . $project->id . '.pdf');
+        return $pdf->download('invoice-' . $project->client . '.pdf');
+    }
+
+    public function markPaid(Project $project)
+    {
+        $project->update(['is_paid' => true]);
+        return redirect()->route('projects.invoice')->with('message', [
+            ["success", "Project marked as paid"]
+        ]);
     }
 }

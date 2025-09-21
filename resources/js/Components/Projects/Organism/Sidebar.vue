@@ -9,7 +9,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 <template>
     <aside
-        class="select-none h-[calc(100vh)] pt-[61px] px-1 text-center bg-white border-r w-[100px] hidden md:block fixed top-0 left-0 z-[900] overflow-y-auto custom-scroll-y-[2px]"
+        class="h-[100px] w-full flex bottom-0 items-center md:flex-col select-none md:h-[calc(100vh)] md:pt-[61px] px-1 text-center bg-white border-r md:w-[100px] fixed md:top-0 md:left-0 z-[900] overflow-y-auto custom-scroll-y-[2px]"
     >
         <n-tooltip
             triger="hover"

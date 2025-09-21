@@ -18,6 +18,8 @@ class Project extends Model
         'description',
         'event_start',
         'event_end',
+        'invoice_date',
+        'is_paid',
     ];
     
     protected $appends = ['total'];
