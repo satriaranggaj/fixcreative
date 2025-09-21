@@ -113,35 +113,46 @@ const submit = () => {
                                 placeholder="Tanggal Selesai"
                             />
                         </n-form-item>
-
-
                         <!-- Items -->
                         <div class="border p-4 rounded-md mb-4">
-                            <h2 class="font-semibold mb-2">Items</h2>
-                            <div v-for="(item, index) in form.items" :key="index" class="grid grid-cols-12 gap-2 items-center mb-2">
-                                <div class="col-span-5">
-                                    <n-input v-model:value="item.name" placeholder="Nama Paket" />
-                                </div>
-                                <div class="col-span-2">
-                                    <n-input-number v-model:value="item.qty" :min="1" placeholder="Day" />
-                                </div>
-                                <div class="col-span-3">
-                                    <n-input-number v-model:value="item.price" :min="0" placeholder="Harga" />
-                                </div>
-                                <div class="col-span-2 flex justify-end">
-                                    <n-button type="error" @click="removeItem(index)" v-if="form.items.length > 1">Hapus</n-button>
-                                </div>
+                        <h2 class="font-semibold mb-2">Items</h2>
+                        <div
+                            v-for="(item, index) in form.items"
+                            :key="index"
+                            class="grid grid-cols-1 md:grid-cols-12 gap-2 items-center mb-2"
+                        >
+                            <div class="md:col-span-5">
+                            <n-input v-model:value="item.name" placeholder="Nama Paket" />
                             </div>
-                            <n-button type="primary" @click="addItem">Tambah Item</n-button>
+                            <div class="md:col-span-2">
+                            <n-input-number v-model:value="item.qty" :min="1" placeholder="Day" />
+                            </div>
+                            <div class="md:col-span-3">
+                            <n-input-number v-model:value="item.price" :min="0" placeholder="Harga" />
+                            </div>
+                            <div class="md:col-span-2 flex md:justify-end">
+                            <n-button
+                                type="error"
+                                @click="removeItem(index)"
+                                v-if="form.items.length > 1"
+                                block
+                            >
+                                Hapus
+                            </n-button>
+                            </div>
                         </div>
+                        <n-button type="primary" @click="addItem">Tambah Item</n-button>
+                        </div>
+
+                        <!-- Payments -->
                         <div class="border p-4 rounded-md mb-4">
                         <h2 class="font-semibold mb-2">Payments</h2>
                         <div
                             v-for="(payment, index) in form.payments"
                             :key="index"
-                            class="grid grid-cols-12 gap-2 items-center mb-2"
+                            class="grid grid-cols-1 md:grid-cols-12 gap-2 items-center mb-2"
                         >
-                            <div class="col-span-3">
+                            <div class="md:col-span-3">
                             <n-select
                                 v-model:value="payment.type"
                                 :options="[
@@ -152,14 +163,10 @@ const submit = () => {
                                 placeholder="Jenis Pembayaran"
                             />
                             </div>
-                            <div class="col-span-3">
-                            <n-input-number
-                                v-model:value="payment.amount"
-                                :min="0"
-                                placeholder="Nominal"
-                            />
+                            <div class="md:col-span-3">
+                            <n-input-number v-model:value="payment.amount" :min="0" placeholder="Nominal" />
                             </div>
-                            <div class="col-span-3">
+                            <div class="md:col-span-3">
                             <n-date-picker
                                 v-model:formatted-value="payment.payment_date"
                                 type="date"
@@ -167,14 +174,15 @@ const submit = () => {
                                 placeholder="Tanggal Bayar"
                             />
                             </div>
-                            <div class="col-span-2">
+                            <div class="md:col-span-2">
                             <n-input v-model:value="payment.method" placeholder="Metode" />
                             </div>
-                            <div class="col-span-1 flex justify-end">
+                            <div class="md:col-span-1 flex md:justify-end">
                             <n-button
                                 type="error"
                                 @click="removePayment(index)"
                                 v-if="form.payments.length > 1"
+                                block
                             >
                                 Hapus
                             </n-button>

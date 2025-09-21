@@ -1,1 +1,0 @@
-import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{d as e,e as c}from"./app-ClzK5jHS.js";const t={},r={src:"/img/logo/logo_fixcreative.webp",loading:"lazy",alt:"logo"};function n(a,i){return c(),e("img",r)}const l=o(t,[["render",n]]);export{l as A};
